@@ -1,10 +1,10 @@
 create table TblCompanyOwner(
 	companyOwnerId int not null identity(1,1),
-	companyOwnerIdentityNumber nvarchar(15) not null,
+	companyOwnerIdentityNumber varchar(15) not null,
 	companyOwnerName nvarchar(40) not null,
 	companyOwnerSurname nvarchar(40) not null,
-	companyOwnerEmail nvarchar(40) not null,
-	companyOwnerTelephoneNumber nvarchar(30) not null,
+	companyOwnerEmail nvarchar(50) not null,
+	companyOwnerTelephoneNumber varchar(30) not null,
 	companyOwnerGender char(1) not null,
 	companyOwnerBirthDate date not null,
 	companyOwnerBirthPlace nvarchar(255) not null,
