@@ -8,10 +8,12 @@ create table TblProductTemplate(
 	productTemplateType int not null,
 	productTemplateBrand int not null,
 	productTemplateUnit int not null,
+	productTemplateCurrency int not null,
 	constraint PK_productTemplateId primary key(productTemplateId),
 	constraint CK_productTemplateName check(len(productTemplateName)>1),
 	constraint FK_productTemplateKind foreign key(productTemplateKind) references TblProductKind(productKindId),
 	constraint FK_productTemplateType foreign key(productTemplateType) references TblProductType(productTypeId),
 	constraint FK_productTemplateBrand foreign key(productTemplateBrand) references TblProductBrand(productBrandId),
-	constraint FK_productTemplateUnit foreign key(productTemplateUnit) references TblProductUnit(productUnitId)
+	constraint FK_productTemplateUnit foreign key(productTemplateUnit) references TblProductUnit(productUnitId),
+	constraint FK_productTemplateCurrency foreign key(productTemplateCurrency) TblAppCurrency(appCurrencyId)
 );
