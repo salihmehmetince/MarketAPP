@@ -5,6 +5,6 @@ create table TblWareHouseHasEquipment(
 	purchaseDate date not null,
 	purchasePrice decimal(18,2) not null,
 	constraint PK_warehouseHasequipmentId primary key(warehouseHasequipmentId),
-	constraint FK_warehouseId foreign key(warehouseId) references TblWarehouse(warehouseId),
-	constraint FK_equipmentId foreign key(equipmentId) references TblEquipment(equipmentId)
+	constraint FK_warehouseIdHEqu foreign key(warehouseId) references TblWarehouse(warehouseId),
+	constraint FK_equipmentIdHEqu foreign key(equipmentId) references TblEquipment(equipmentId)
 );

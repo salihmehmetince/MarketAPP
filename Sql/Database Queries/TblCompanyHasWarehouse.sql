@@ -5,6 +5,6 @@ create table TblCompanyHasWarehouse(
 	ownershipStartDate date null,
 	ownershipEndDate date null,
 	constraint PK_companyHasWarehouseId primary key(companyHasWarehouseId),
-	constraint FK_companyId foreign key(companyId) references TblCompany(companyId),
-	constraint FK_warehouseId foreign key(warehouseId) references TblWarehouse(warehouseId)
+	constraint FK_companyHWId foreign key(companyId) references TblCompany(companyId),
+	constraint FK_warehouseHWId foreign key(warehouseId) references TblWarehouse(warehouseId)
 );

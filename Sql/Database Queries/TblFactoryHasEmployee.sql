@@ -3,6 +3,6 @@ create table TblFactoryHasEmployee(
 	factoryId int not null,
 	employeeId int not null,
 	constraint PK_factoryHasEmployee primary key(factoryHasEmployeeId),
-	constraint FK_factoryId foreign key (factoryId) references TblFactory(factoryId),
-	constraint FK_employeeId foreign key (employeeId) references TblEmployee(employeeId)
+	constraint FK_factoryHEmId foreign key (factoryId) references TblFactory(factoryId),
+	constraint FK_employeeHEmId foreign key (employeeId) references TblEmployee(employeeId)
 );

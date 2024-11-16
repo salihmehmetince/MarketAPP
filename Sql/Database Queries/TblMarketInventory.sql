@@ -4,6 +4,6 @@ create table TblMarketInventory(
 	productTemplateId int not null,
 	totalAmount bigint not null,
 	constraint PK_marketInventoryId primary key(marketInventoryId),
-	constraint FK_marketId foreign key(marketId) references TblMarket(marketId),
-	constraint FK_productTemplateId foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
+	constraint FK_marketIdMarketInventory foreign key(marketId) references TblMarket(marketId),
+	constraint FK_productTemplateIdMarketInventory foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
 );

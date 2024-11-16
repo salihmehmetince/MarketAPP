@@ -5,6 +5,6 @@ create table TblCompanyHasFactory(
 	ownershipStartDate date null,
 	ownershipEndDate date null,
 	constraint PK_companyHasFactoryId primary key(companyHasFactoryId),
-	constraint FK_companyId foreign key(companyId) references TblCompany(companyId),
-	constraint FK_factoryId foreign key(factoryId) references TblFactory(factoryId)
+	constraint FK_companyHFId foreign key(companyId) references TblCompany(companyId),
+	constraint FK_factoryHFId foreign key(factoryId) references TblFactory(factoryId)
 );

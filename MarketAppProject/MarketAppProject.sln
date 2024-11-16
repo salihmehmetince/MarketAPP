@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketApp.Desktop", "MarketApp.Desktop\MarketApp.Desktop.csproj", "{1BA888CF-D910-4575-B027-73BA78A61010}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketAppProject", "MarketAppProject\MarketAppProject.csproj", "{FBE7D0BD-6434-45AC-9A43-CA56367DD0C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BA888CF-D910-4575-B027-73BA78A61010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BA888CF-D910-4575-B027-73BA78A61010}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BA888CF-D910-4575-B027-73BA78A61010}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BA888CF-D910-4575-B027-73BA78A61010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE7D0BD-6434-45AC-9A43-CA56367DD0C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE7D0BD-6434-45AC-9A43-CA56367DD0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE7D0BD-6434-45AC-9A43-CA56367DD0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE7D0BD-6434-45AC-9A43-CA56367DD0C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D8D43505-0356-429D-A86F-E09AD32075AD}
+		SolutionGuid = {F462307A-3CAD-4BA5-924F-5CDC0D33BFBA}
 	EndGlobalSection
 EndGlobal

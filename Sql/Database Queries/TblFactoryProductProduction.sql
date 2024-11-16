@@ -6,6 +6,6 @@ create table TblFactoryProductProduction(
 	productionDate date not null,
 	expirationDate int not null,
 	constraint PK_factoryProductProductionId primary key(factoryProductProductionId),
-	constraint FK_factoryId foreign key(factoryId) references TblFactory(factoryId),
-	constraint FK_productTemplateId foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
+	constraint FK_factoryIdProductProduction foreign key(factoryId) references TblFactory(factoryId),
+	constraint FK_productTemplateIdProductProduction foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
 );

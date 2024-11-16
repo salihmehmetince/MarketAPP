@@ -4,6 +4,6 @@ create table TblFactoryInventory(
 	productTemplateId int not null,
 	totalAmount bigint not null,
 	constraint PK_factoryInventoryId primary key(factoryInventoryId),
-	constraint FK_factoryId foreign key(factoryId) references TblFactory(factoryId),
-	constraint FK_productTemplateId foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
+	constraint FK_factoryIdFactoryInventory foreign key(factoryId) references TblFactory(factoryId),
+	constraint FK_productTemplateIdFactoryInventory foreign key(productTemplateId) references TblProductTemplate(productTemplateId)
 );

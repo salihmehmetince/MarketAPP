@@ -15,5 +15,5 @@ create table TblProductTemplate(
 	constraint FK_productTemplateType foreign key(productTemplateType) references TblProductType(productTypeId),
 	constraint FK_productTemplateBrand foreign key(productTemplateBrand) references TblProductBrand(productBrandId),
 	constraint FK_productTemplateUnit foreign key(productTemplateUnit) references TblProductUnit(productUnitId),
-	constraint FK_productTemplateCurrency foreign key(productTemplateCurrency) TblAppCurrency(appCurrencyId)
+	constraint FK_productTemplateCurrency foreign key(productTemplateCurrency) references TblAppCurrency(appCurrencyId)
 );

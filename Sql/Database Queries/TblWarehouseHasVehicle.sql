@@ -6,6 +6,6 @@ create table TblWarehouseHasVehicle(
 	vehiclePurchasePrice decimal(18,2) not null,
 	vehiclePurchaseDate date not null,
 	constraint PK_warehouseHasVehicleId primary key(warehouseHasVehicleId),
-	constraint FK_warehouseId foreign key(warehouseId) references TblWarehouse(warehouseId),
-	constraint FK_vehicleId foreign key(vehicleId) references TblVehicle(vehicleId),
+	constraint FK_warehouseIdHVe foreign key(warehouseId) references TblWarehouse(warehouseId),
+	constraint FK_vehicleIdHVe foreign key(vehicleId) references TblVehicle(vehicleId),
 );

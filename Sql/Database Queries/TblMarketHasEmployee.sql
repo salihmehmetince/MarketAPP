@@ -3,6 +3,6 @@ create table TblMarketHasEmployee(
 	marketId int not null,
 	employeeId int not null,
 	constraint PK_marketHasEmployeeId primary key(marketHasEmployeeId),
-	constraint FK_marketId foreign key (marketId) references TblMarket(marketId),
-	constraint FK_employeeId foreign key (employeeId) references TblEmployee(employeeId)
+	constraint FK_marketIdHEm foreign key (marketId) references TblMarket(marketId),
+	constraint FK_employeeIdHEm foreign key (employeeId) references TblEmployee(employeeId)
 );

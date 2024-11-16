@@ -9,7 +9,7 @@ create table TblCustomerBuysProductWithCreditCard(
 	cardNumberLastFourDigidts char(4) not null,
 	cardLastUseYear smallint not null,
 	constraint PK_customerBuysProductWithCreditCardId primary key(customerBuysProductWithCreditCardId),
-	constraint FK_customerId foreign key(customerId) references TblCustomer(customerId),
-	constraint FK_marketId foreign key(marketId) references TblMarket(marketId),
-	constraint FK_saleCurrency foreign key(saleCurrency) references TblAppCurrency(appCurrencyId)
+	constraint FK_customerIdCustomerBuysProductWithCreditCard foreign key(customerId) references TblCustomer(customerId),
+	constraint FK_marketIdCustomerBuysProductWithCreditCard foreign key(marketId) references TblMarket(marketId),
+	constraint FK_saleCurrencyCustomerBuysProductWithCreditCard foreign key(saleCurrency) references TblAppCurrency(appCurrencyId)
 );

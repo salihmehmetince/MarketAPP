@@ -5,6 +5,6 @@ create table TblMarketHasEquipment(
 	purchaseDate date not null,
 	purchasePrice decimal(18,2) not null,
 	constraint PK_marketHasEquipmentId primary key(marketHasEquipmentId),
-	constraint FK_marketId foreign key(marketId) references TblMarket(marketId),
-	constraint FK_equipmentId foreign key(equipmentId) references TblEquipment(equipmentId)
+	constraint FK_marketIdHEq foreign key(marketId) references TblMarket(marketId),
+	constraint FK_equipmentIdHEq foreign key(equipmentId) references TblEquipment(equipmentId)
 );

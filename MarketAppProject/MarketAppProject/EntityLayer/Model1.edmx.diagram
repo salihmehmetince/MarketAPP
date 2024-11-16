@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07531e0323ea4f538813fe779bd8e91b" Name="Diagram1">
+        <EntityTypeShape EntityType="DBMarketAppModel.TblAdmin" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblAppCurrency" Width="1.5" PointX="0.75" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCashSaleDetail" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompany" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyHasFactory" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyHasMarket" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyHasWarehouse" Width="1.5" PointX="14.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyOwerHasCompany" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyOwner" Width="1.5" PointX="9" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyType" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCountry" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCreditCardSaleDetail" Width="1.5" PointX="8.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCurrency" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCustomer" Width="1.5" PointX="0.75" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCustomerBuysProductWithCash" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCustomerBuysProductWithCreditCard" Width="1.5" PointX="6" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblDepartmentType" Width="1.5" PointX="11.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblEmployee" Width="1.5" PointX="14" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblEquipment" Width="1.5" PointX="3" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactory" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryHasEmployee" Width="1.5" PointX="16.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryHasEquipment" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryHasVehicle" Width="1.5" PointX="11.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryInventory" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryProducedProduct" Width="1.5" PointX="8.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryProductProduction" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactorySendsProductToMarket" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactorySendsProductToWarehouse" Width="1.5" PointX="11.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblMarket" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblMarketHasEmployee" Width="1.5" PointX="16.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblMarketHasEquipment" Width="1.5" PointX="14.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblMarketHasVehicle" Width="1.5" PointX="11.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblMarketInventory" Width="1.5" PointX="8.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblPositionType" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProductBrand" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProductKind" Width="1.5" PointX="0.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProductTemplate" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProductType" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProductUnit" Width="1.5" PointX="0.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblProfession" Width="1.5" PointX="6.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblRankType" Width="1.5" PointX="11.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblVehicle" Width="1.5" PointX="3" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblVehicleBrand" Width="1.5" PointX="0.75" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblVehicleModel" Width="1.5" PointX="0.75" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblVehicleType" Width="1.5" PointX="0.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWarehouse" Width="1.5" PointX="9" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWarehouseHasEmployee" Width="1.5" PointX="19.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWareHouseHasEquipment" Width="1.5" PointX="14.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWarehouseHasVehicle" Width="1.5" PointX="14.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWarehouseInventory" Width="1.5" PointX="11.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblWarehouseSendsToMarket" Width="1.5" PointX="11.25" PointY="23" IsExpanded="true" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateCurrency" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_saleCurrencyCustomerBuysProductWithCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_saleCurrencyCustomerBuysProductWithCreditCard" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_cashSaleIdCashSaleDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdCashSaleDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_company" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyHFId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyHMId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyHWId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyType" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryHFId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketHMId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseHWId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyOwner" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_companyOwnerProfession" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_creditCardSaleIdCreditCardSaleDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdCreditCardSaleDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_customerCurrencyCustomerBuysProductWithCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_customerIdCustomerBuysProductWithCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_customerIdCustomerBuysProductWithCreditCard" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdCustomerBuysProductWithCash" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdCustomerBuysProductWithCreditCard" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeeDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeeHEmId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeeIdHEm" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeeIdHEmp" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeePosition" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_employeeRank" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_equipmentHEId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_equipmentIdHEq" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_equipmentIdHEqu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryHEId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryHEmId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryHVId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdFactoryInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdFactorySendsProductToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdFactorySendsProductToWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdProducedProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdProductProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleHVId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdFactoryInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdProducedProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdProductProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdFactorySendsProductToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdFactorySendsProductToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_sendVehicleFactorySendsProductToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdFactorySendsProductToWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_sendVehicleFactorySendsProductToWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdFactorySendsProductToWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdHEm" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdHEq" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdHV" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdMarketInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_marketIdWarehouseSendsToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleIdHV" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdMarketInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateBrand" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateKind" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdWarehouseInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdWarehouseSendsToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateType" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_sendVehicleWarehouseSendsToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleBrand" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleIdHVe" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleModel" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_vehicleType" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdHEmp" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdHEqu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdHVe" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseSendsToMarket" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

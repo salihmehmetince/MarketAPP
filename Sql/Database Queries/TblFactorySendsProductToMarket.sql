@@ -7,9 +7,9 @@ create table TblFactorySendsProductToMarket(
 	senddate date not null,
 	sendVehicle int not null,
 	constraint PK_factorySendsProductToMarketId primary key(factorySendsProductToMarketId),
-	constraint FK_factoryId foreign key(factoryId) references TblFactory(factoryId),
-	constraint FK_marketId foreign key(marketId) references TblMarket(marketId),
-	constraint FK_productTemplateId foreign key(productTemplateId) references TblProductTemplate(productTemplateId),
-	constraint FK_sendVehicle foreign key(sendVehicle) references TblVehicle(vehicleId)
+	constraint FK_factoryIdFactorySendsProductToMarket foreign key(factoryId) references TblFactory(factoryId),
+	constraint FK_marketIdFactorySendsProductToMarket foreign key(marketId) references TblMarket(marketId),
+	constraint FK_productTemplateIdFactorySendsProductToMarket foreign key(productTemplateId) references TblProductTemplate(productTemplateId),
+	constraint FK_sendVehicleFactorySendsProductToMarket foreign key(sendVehicle) references TblVehicle(vehicleId)
 
 	);

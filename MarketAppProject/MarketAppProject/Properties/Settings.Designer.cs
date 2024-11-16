@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MarketApp.Desktop.Properties
+namespace MarketAppProject.Properties
 {
 
 

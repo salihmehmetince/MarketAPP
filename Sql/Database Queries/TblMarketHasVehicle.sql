@@ -6,6 +6,6 @@ create table TblMarketHasVehicle(
 	vehiclePurchasePrice decimal(18,2) not null,
 	vehiclePurchaseDate date not null,
 	constraint PK_marketHasVehicleId primary key(marketHasVehicleId),
-	constraint FK_marketId foreign key(marketId) references TblMarket(marketId),
-	constraint FK_vehicleId foreign key(vehicleId) references TblVehicle(vehicleId),
+	constraint FK_marketIdHV foreign key(marketId) references TblMarket(marketId),
+	constraint FK_vehicleIdHV foreign key(vehicleId) references TblVehicle(vehicleId),
 );

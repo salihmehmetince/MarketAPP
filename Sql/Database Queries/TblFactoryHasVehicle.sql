@@ -6,6 +6,6 @@ create table TblFactoryHasVehicle(
 	vehiclePurchasePrice decimal(18,2) not null,
 	vehiclePurchaseDate date not null,
 	constraint PK_factoryHasVehicleId primary key(factoryHasVehicleId),
-	constraint FK_factoryId foreign key(factoryId) references TblFactory(factoryId),
-	constraint FK_vehicleId foreign key(vehicleId) references TblVehicle(vehicleId),
+	constraint FK_factoryHVId foreign key(factoryId) references TblFactory(factoryId),
+	constraint FK_vehicleHVId foreign key(vehicleId) references TblVehicle(vehicleId),
 );
