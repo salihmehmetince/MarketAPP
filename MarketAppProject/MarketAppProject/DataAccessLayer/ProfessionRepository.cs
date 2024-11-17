@@ -68,7 +68,7 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch(Exception e)
             {
-                throw new Exception("An error occured while updateting the profession", e);
+                throw new Exception("An error occured while updating the profession", e);
             }
         }
 

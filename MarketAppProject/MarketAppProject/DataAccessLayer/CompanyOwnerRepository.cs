@@ -76,7 +76,7 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while updateting the company owner", e);
+                throw new Exception("An error occured while updating the company owner", e);
             }
         }
 

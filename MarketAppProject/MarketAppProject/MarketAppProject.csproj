@@ -55,8 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLayer\CompanyOwnerHasCompanyRepository.cs" />
     <Compile Include="DataAccessLayer\CompanyOwnerRepository.cs" />
+    <Compile Include="DataAccessLayer\CompanyRepository.cs" />
+    <Compile Include="DataAccessLayer\CompanyTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\CountryRepository.cs" />
+    <Compile Include="DataAccessLayer\DepartmentTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\EmployeeRepository.cs" />
+    <Compile Include="DataAccessLayer\EquipmentRepository.cs" />
+    <Compile Include="DataAccessLayer\FactoryRepository.cs" />
+    <Compile Include="DataAccessLayer\MarketRepository.cs" />
+    <Compile Include="DataAccessLayer\PositionTypeRepository.cs" />
     <Compile Include="DataAccessLayer\ProfessionRepository.cs" />
+    <Compile Include="DataAccessLayer\RankTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\VehicleBrandRepository.cs" />
+    <Compile Include="DataAccessLayer\VehicleModelRepository.cs" />
+    <Compile Include="DataAccessLayer\VehicleRepository.cs" />
+    <Compile Include="DataAccessLayer\VehicleTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseRepository.cs" />
     <Compile Include="EntityLayer\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
