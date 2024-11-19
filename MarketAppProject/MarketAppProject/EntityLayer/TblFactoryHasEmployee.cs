@@ -17,6 +17,9 @@ namespace MarketAppProject.EntityLayer
         public int factoryHasEmployeeId { get; set; }
         public int factoryId { get; set; }
         public int employeeId { get; set; }
+        public System.DateTime startDate { get; set; }
+        public Nullable<System.DateTime> endDate { get; set; }
+        public bool isActive { get; set; }
     
         public virtual TblEmployee TblEmployee { get; set; }
         public virtual TblFactory TblFactory { get; set; }

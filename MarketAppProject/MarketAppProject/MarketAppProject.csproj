@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLayer\CompanyHasFactoryRepository.cs" />
+    <Compile Include="DataAccessLayer\CompanyHasMarketRepository.cs" />
+    <Compile Include="DataAccessLayer\CompanyHasWarehouseRepository.cs" />
     <Compile Include="DataAccessLayer\CompanyOwnerHasCompanyRepository.cs" />
     <Compile Include="DataAccessLayer\CompanyOwnerRepository.cs" />
     <Compile Include="DataAccessLayer\CompanyRepository.cs" />
@@ -63,7 +66,13 @@
     <Compile Include="DataAccessLayer\DepartmentTypeRepository.cs" />
     <Compile Include="DataAccessLayer\EmployeeRepository.cs" />
     <Compile Include="DataAccessLayer\EquipmentRepository.cs" />
+    <Compile Include="DataAccessLayer\FactoryHasEmployeeRepository.cs" />
+    <Compile Include="DataAccessLayer\FactoryHasEquipmentRepository.cs" />
+    <Compile Include="DataAccessLayer\FactoryHasVehicleRepository.cs" />
     <Compile Include="DataAccessLayer\FactoryRepository.cs" />
+    <Compile Include="DataAccessLayer\MarketHasEmployeeRepository.cs" />
+    <Compile Include="DataAccessLayer\MarketHasEquipmentRepository.cs" />
+    <Compile Include="DataAccessLayer\MarketHasVehicleRepository.cs" />
     <Compile Include="DataAccessLayer\MarketRepository.cs" />
     <Compile Include="DataAccessLayer\PositionTypeRepository.cs" />
     <Compile Include="DataAccessLayer\ProfessionRepository.cs" />
@@ -72,6 +81,9 @@
     <Compile Include="DataAccessLayer\VehicleModelRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseHasEmplyeeRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseHasEquipmentRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseHasVehicleRepository.cs" />
     <Compile Include="DataAccessLayer\WarehouseRepository.cs" />
     <Compile Include="EntityLayer\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -87,6 +99,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityLayer\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityLayer\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityLayer\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityLayer\TblAdmin.cs">
       <DependentUpon>Model1.tt</DependentUpon>

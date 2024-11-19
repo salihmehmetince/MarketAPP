@@ -130,6 +130,7 @@
         <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdHVe" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseInventory" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseSendsToMarket" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBMarketAppModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

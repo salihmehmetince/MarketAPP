@@ -19,6 +19,7 @@ namespace MarketAppProject.EntityLayer
         public int warehouseId { get; set; }
         public Nullable<System.DateTime> ownershipStartDate { get; set; }
         public Nullable<System.DateTime> ownershipEndDate { get; set; }
+        public bool isActive { get; set; }
     
         public virtual TblCompany TblCompany { get; set; }
         public virtual TblWarehouse TblWarehouse { get; set; }

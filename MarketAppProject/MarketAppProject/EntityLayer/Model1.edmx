@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBMarketAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBMarketAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="TblAdmin">
           <Key>
             <PropertyRef Name="adminId" />
@@ -50,6 +60,7 @@
           <Property Name="factoryId" Type="int" Nullable="false" />
           <Property Name="ownershipStartDate" Type="date" />
           <Property Name="ownershipEndDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyHasMarket">
           <Key>
@@ -60,6 +71,7 @@
           <Property Name="marketId" Type="int" Nullable="false" />
           <Property Name="ownershipStartDate" Type="date" />
           <Property Name="ownershipEndDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyHasWarehouse">
           <Key>
@@ -70,6 +82,7 @@
           <Property Name="warehouseId" Type="int" Nullable="false" />
           <Property Name="ownershipStartDate" Type="date" />
           <Property Name="ownershipEndDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyOwerHasCompany">
           <Key>
@@ -79,6 +92,9 @@
           <Property Name="companyOwner" Type="int" Nullable="false" />
           <Property Name="company" Type="int" Nullable="false" />
           <Property Name="companyOwnerPercent" Type="tinyint" Nullable="false" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="endDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyOwner">
           <Key>
@@ -222,6 +238,9 @@
           <Property Name="factoryHasEmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="factoryId" Type="int" Nullable="false" />
           <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="endDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblFactoryHasEquipment">
           <Key>
@@ -315,6 +334,9 @@
           <Property Name="marketHasEmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="marketId" Type="int" Nullable="false" />
           <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="endDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblMarketHasEquipment">
           <Key>
@@ -461,6 +483,9 @@
           <Property Name="warehouseHasEmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="warehouseId" Type="int" Nullable="false" />
           <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="endDate" Type="date" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TblWareHouseHasEquipment">
           <Key>
@@ -1392,7 +1417,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBMarketAppModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAppCurrency" EntityType="Self.TblAppCurrency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCashSaleDetail" EntityType="Self.TblCashSaleDetail" Schema="dbo" store:Type="Tables" />
@@ -1741,8 +1798,7 @@
             <End Role="TblWarehouseSendsToMarket" EntitySet="TblWarehouseSendsToMarket" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBMarketAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1804,6 +1860,7 @@
           <Property Name="ownershipEndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCompany" Relationship="Self.FK_companyHFId" FromRole="TblCompanyHasFactory" ToRole="TblCompany" />
           <NavigationProperty Name="TblFactory" Relationship="Self.FK_factoryHFId" FromRole="TblCompanyHasFactory" ToRole="TblFactory" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyHasMarket">
           <Key>
@@ -1816,6 +1873,7 @@
           <Property Name="ownershipEndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCompany" Relationship="Self.FK_companyHMId" FromRole="TblCompanyHasMarket" ToRole="TblCompany" />
           <NavigationProperty Name="TblMarket" Relationship="Self.FK_marketHMId" FromRole="TblCompanyHasMarket" ToRole="TblMarket" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyHasWarehouse">
           <Key>
@@ -1828,6 +1886,7 @@
           <Property Name="ownershipEndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCompany" Relationship="Self.FK_companyHWId" FromRole="TblCompanyHasWarehouse" ToRole="TblCompany" />
           <NavigationProperty Name="TblWarehouse" Relationship="Self.FK_warehouseHWId" FromRole="TblCompanyHasWarehouse" ToRole="TblWarehouse" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyOwerHasCompany">
           <Key>
@@ -1839,6 +1898,9 @@
           <Property Name="companyOwnerPercent" Type="Byte" Nullable="false" />
           <NavigationProperty Name="TblCompany" Relationship="Self.FK_company" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompany" />
           <NavigationProperty Name="TblCompanyOwner" Relationship="Self.FK_companyOwner" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompanyOwner" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyOwner">
           <Key>
@@ -2023,6 +2085,9 @@
           <Property Name="employeeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_employeeHEmId" FromRole="TblFactoryHasEmployee" ToRole="TblEmployee" />
           <NavigationProperty Name="TblFactory" Relationship="Self.FK_factoryHEmId" FromRole="TblFactoryHasEmployee" ToRole="TblFactory" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblFactoryHasEquipment">
           <Key>
@@ -2145,6 +2210,9 @@
           <Property Name="employeeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_employeeIdHEm" FromRole="TblMarketHasEmployee" ToRole="TblEmployee" />
           <NavigationProperty Name="TblMarket" Relationship="Self.FK_marketIdHEm" FromRole="TblMarketHasEmployee" ToRole="TblMarket" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblMarketHasEquipment">
           <Key>
@@ -2340,6 +2408,9 @@
           <Property Name="employeeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_employeeIdHEmp" FromRole="TblWarehouseHasEmployee" ToRole="TblEmployee" />
           <NavigationProperty Name="TblWarehouse" Relationship="Self.FK_warehouseIdHEmp" FromRole="TblWarehouseHasEmployee" ToRole="TblWarehouse" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TblWareHouseHasEquipment">
           <Key>
@@ -3629,7 +3700,59 @@
             <End Role="TblWarehouse" EntitySet="TblWarehouse" />
             <End Role="TblWarehouseSendsToMarket" EntitySet="TblWarehouseSendsToMarket" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="DBMarketAppModel.sysdiagrams" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBMarketAppModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBMarketAppModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3679,6 +3802,7 @@
           <EntitySetMapping Name="TblCompanyHasFactory">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyHasFactory">
               <MappingFragment StoreEntitySet="TblCompanyHasFactory">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="companyHasFactoryId" ColumnName="companyHasFactoryId" />
                 <ScalarProperty Name="companyId" ColumnName="companyId" />
                 <ScalarProperty Name="factoryId" ColumnName="factoryId" />
@@ -3690,6 +3814,7 @@
           <EntitySetMapping Name="TblCompanyHasMarket">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyHasMarket">
               <MappingFragment StoreEntitySet="TblCompanyHasMarket">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="companyHasMarketId" ColumnName="companyHasMarketId" />
                 <ScalarProperty Name="companyId" ColumnName="companyId" />
                 <ScalarProperty Name="marketId" ColumnName="marketId" />
@@ -3701,6 +3826,7 @@
           <EntitySetMapping Name="TblCompanyHasWarehouse">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyHasWarehouse">
               <MappingFragment StoreEntitySet="TblCompanyHasWarehouse">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="companyHasWarehouseId" ColumnName="companyHasWarehouseId" />
                 <ScalarProperty Name="companyId" ColumnName="companyId" />
                 <ScalarProperty Name="warehouseId" ColumnName="warehouseId" />
@@ -3712,6 +3838,9 @@
           <EntitySetMapping Name="TblCompanyOwerHasCompany">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyOwerHasCompany">
               <MappingFragment StoreEntitySet="TblCompanyOwerHasCompany">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
                 <ScalarProperty Name="CompanyOwerHasCompanyId" ColumnName="CompanyOwerHasCompanyId" />
                 <ScalarProperty Name="companyOwner" ColumnName="companyOwner" />
                 <ScalarProperty Name="company" ColumnName="company" />
@@ -3869,6 +3998,9 @@
           <EntitySetMapping Name="TblFactoryHasEmployee">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblFactoryHasEmployee">
               <MappingFragment StoreEntitySet="TblFactoryHasEmployee">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
                 <ScalarProperty Name="factoryHasEmployeeId" ColumnName="factoryHasEmployeeId" />
                 <ScalarProperty Name="factoryId" ColumnName="factoryId" />
                 <ScalarProperty Name="employeeId" ColumnName="employeeId" />
@@ -3971,6 +4103,9 @@
           <EntitySetMapping Name="TblMarketHasEmployee">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblMarketHasEmployee">
               <MappingFragment StoreEntitySet="TblMarketHasEmployee">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
                 <ScalarProperty Name="marketHasEmployeeId" ColumnName="marketHasEmployeeId" />
                 <ScalarProperty Name="marketId" ColumnName="marketId" />
                 <ScalarProperty Name="employeeId" ColumnName="employeeId" />
@@ -4134,6 +4269,9 @@
           <EntitySetMapping Name="TblWarehouseHasEmployee">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblWarehouseHasEmployee">
               <MappingFragment StoreEntitySet="TblWarehouseHasEmployee">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
                 <ScalarProperty Name="warehouseHasEmployeeId" ColumnName="warehouseHasEmployeeId" />
                 <ScalarProperty Name="warehouseId" ColumnName="warehouseId" />
                 <ScalarProperty Name="employeeId" ColumnName="employeeId" />
@@ -4186,6 +4324,41 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBMarketAppModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBMarketAppModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBMarketAppModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBMarketAppModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBMarketAppModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMarketAppModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBMarketAppModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMarketAppModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBMarketAppModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBMarketAppModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

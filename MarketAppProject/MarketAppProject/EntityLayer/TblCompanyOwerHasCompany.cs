@@ -18,6 +18,9 @@ namespace MarketAppProject.EntityLayer
         public int companyOwner { get; set; }
         public int company { get; set; }
         public byte companyOwnerPercent { get; set; }
+        public System.DateTime startDate { get; set; }
+        public Nullable<System.DateTime> endDate { get; set; }
+        public bool isActive { get; set; }
     
         public virtual TblCompany TblCompany { get; set; }
         public virtual TblCompanyOwner TblCompanyOwner { get; set; }

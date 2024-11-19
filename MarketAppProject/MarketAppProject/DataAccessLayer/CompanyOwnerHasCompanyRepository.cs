@@ -59,6 +59,9 @@ namespace MarketAppProject.DataAccessLayer
                     existingCompanyOwnerhasCompany.companyOwner = companyOwerHasCompany.companyOwner;
                     existingCompanyOwnerhasCompany.company = companyOwerHasCompany.company;
                     existingCompanyOwnerhasCompany.companyOwnerPercent= companyOwerHasCompany.companyOwnerPercent;
+                    existingCompanyOwnerhasCompany.startDate= companyOwerHasCompany.startDate;
+                    existingCompanyOwnerhasCompany.endDate= companyOwerHasCompany.endDate;
+                    existingCompanyOwnerhasCompany.isActive= companyOwerHasCompany.isActive;
                     dBMarketAppEntitiesContext.SaveChanges();
                     return existingCompanyOwnerhasCompany.CompanyOwerHasCompanyId;
                 }

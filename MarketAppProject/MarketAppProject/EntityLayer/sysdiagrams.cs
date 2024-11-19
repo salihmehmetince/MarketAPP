@@ -12,16 +12,12 @@ namespace MarketAppProject.EntityLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class TblCompanyHasMarket
+    public partial class sysdiagrams
     {
-        public int companyHasMarketId { get; set; }
-        public int companyId { get; set; }
-        public int marketId { get; set; }
-        public Nullable<System.DateTime> ownershipStartDate { get; set; }
-        public Nullable<System.DateTime> ownershipEndDate { get; set; }
-        public bool isActive { get; set; }
-    
-        public virtual TblCompany TblCompany { get; set; }
-        public virtual TblMarket TblMarket { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
