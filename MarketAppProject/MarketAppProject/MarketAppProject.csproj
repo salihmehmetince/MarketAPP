@@ -75,6 +75,11 @@
     <Compile Include="DataAccessLayer\MarketHasVehicleRepository.cs" />
     <Compile Include="DataAccessLayer\MarketRepository.cs" />
     <Compile Include="DataAccessLayer\PositionTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\ProductBrandRepository.cs" />
+    <Compile Include="DataAccessLayer\ProductKindRepository.cs" />
+    <Compile Include="DataAccessLayer\ProductTemplateRepository.cs" />
+    <Compile Include="DataAccessLayer\ProductTypeRepository.cs" />
+    <Compile Include="DataAccessLayer\ProductUnitRepository.cs" />
     <Compile Include="DataAccessLayer\ProfessionRepository.cs" />
     <Compile Include="DataAccessLayer\RankTypeRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleBrandRepository.cs" />

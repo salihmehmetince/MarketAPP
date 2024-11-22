@@ -28,7 +28,74 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALWarehouseHasEmployeeList
+        public int DALWarehouseHasEmployeeAdd(TblWarehouseHasEmployee warehouseHasEmployee)
+        {
+            try
+            {
+                if(warehouseHasEmployee!=null)
+                {
+                    dBMarketAppEntitiesContext.TblWarehouseHasEmployee.Add(warehouseHasEmployee);
+                    dBMarketAppEntitiesContext.SaveChanges();
+                    return warehouseHasEmployee.warehouseHasEmployeeId;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("An error occured while adding the warehouse has employee", e);
+            }
+        }
+
+        public int DALWarehouseHasEmployeeUpdate(TblWarehouseHasEmployee warehouseHasEmployee)
+        {
+            try
+            {
+                TblWarehouseHasEmployee existingWarehousHasEmployee = dBMarketAppEntitiesContext.TblWarehouseHasEmployee.Find(warehouseHasEmployee.warehouseHasEmployeeId);
+                if(existingWarehousHasEmployee!=null)
+                {
+                    existingWarehousHasEmployee.warehouseId = warehouseHasEmployee.warehouseId;
+                    existingWarehousHasEmployee.employeeId=warehouseHasEmployee.employeeId;
+                    existingWarehousHasEmployee.startDate=warehouseHasEmployee.startDate;
+                    existingWarehousHasEmployee.endDate=warehouseHasEmployee.endDate;
+                    existingWarehousHasEmployee.isActive=warehouseHasEmployee.isActive;
+                    dBMarketAppEntitiesContext.SaveChanges();
+                    return existingWarehousHasEmployee.warehouseHasEmployeeId;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("An error occured while updating the warehouse has employee", e);
+            }
+        }
+
+        public int DALWarehouseHasEmployeeDelete(TblWarehouseHasEmployee warehouseHasEmployee)
+        {
+            try
+            {
+                TblWarehouseHasEmployee existingWarehousHasEmployee = dBMarketAppEntitiesContext.TblWarehouseHasEmployee.Find(warehouseHasEmployee.warehouseHasEmployeeId);
+                if (existingWarehousHasEmployee != null)
+                {
+                    dBMarketAppEntitiesContext.TblWarehouseHasEmployee.Remove(existingWarehousHasEmployee);
+                    dBMarketAppEntitiesContext.SaveChanges();
+                    return existingWarehousHasEmployee.warehouseHasEmployeeId;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("An error occured while deleting the warehouse has employee", e);
+            }
+        }
         public void Dispose()
         {
             throw new NotImplementedException();

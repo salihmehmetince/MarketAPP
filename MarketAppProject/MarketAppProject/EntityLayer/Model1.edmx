@@ -397,7 +397,7 @@
           <Property Name="productTemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="productTemplateName" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="productTemplateProfitPercent" Type="smallint" Nullable="false" />
-          <Property Name="productTemplateLifeTeamYear" Type="tinyint" Nullable="false" />
+          <Property Name="productTemplateLifeTeamYear" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="productTemplateCost" Type="int" Nullable="false" />
           <Property Name="productTemplateKind" Type="int" Nullable="false" />
           <Property Name="productTemplateType" Type="int" Nullable="false" />
