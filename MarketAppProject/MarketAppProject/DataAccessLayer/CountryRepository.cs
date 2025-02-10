@@ -16,7 +16,7 @@ namespace MarketAppProject.DataAccessLayer
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblCountry> DALCountryLisr()
+        public List<TblCountry> DALCountryList()
         {
             try
             {
