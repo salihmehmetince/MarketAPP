@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblCreditCardSaleDetailRepository : IDisposable
+    internal class CreditCardSaleDetailRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblCreditCardSaleDetailRepository()
+        public CreditCardSaleDetailRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblCreditCardSaleDetail> DALTblCreditCardSaleDetailList()
+        public List<TblCreditCardSaleDetail> DALCreditCardSaleDetailList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblCreditCardSaleDetail", e);
+                throw new Exception("An error occured while listing the CreditCardSaleDetail", e);
             }
         }
 
-        public int DALTblCreditCardSaleDetailAdd(TblCreditCardSaleDetail creditCardSaleDetail)
+        public int DALCreditCardSaleDetailAdd(TblCreditCardSaleDetail creditCardSaleDetail)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblCreditCardSaleDetailUpdate(TblCreditCardSaleDetail creditCardSaleDetail)
+        public int DALCreditCardSaleDetailUpdate(TblCreditCardSaleDetail creditCardSaleDetail)
         {
             try
             {
@@ -75,16 +75,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblCreditCardSaleDetailDelete(TblCreditCardSaleDetail creditCardSaleDetail)
+        public int DALCreditCardSaleDetailDelete(TblCreditCardSaleDetail creditCardSaleDetail)
         {
             try
             {
-                TblCreditCardSaleDetail existingTblCreditCardSaleDetail = dBMarketAppEntitiesContext.TblCreditCardSaleDetail.Find(creditCardSaleDetail.creditCardSaleDetailId);
-                if (existingTblCreditCardSaleDetail != null)
+                TblCreditCardSaleDetail existingCreditCardSaleDetail = dBMarketAppEntitiesContext.TblCreditCardSaleDetail.Find(creditCardSaleDetail.creditCardSaleDetailId);
+                if (existingCreditCardSaleDetail != null)
                 {
-                    dBMarketAppEntitiesContext.TblCreditCardSaleDetail.Remove(existingTblCreditCardSaleDetail);
+                    dBMarketAppEntitiesContext.TblCreditCardSaleDetail.Remove(existingCreditCardSaleDetail);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblCreditCardSaleDetail.creditCardSaleDetailId;
+                    return existingCreditCardSaleDetail.creditCardSaleDetailId;
                 }
                 else
                 {

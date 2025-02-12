@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblCustomerRepository : IDisposable
+    internal class CustomerRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblCustomerRepository()
+        public CustomerRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblCustomer> DALTblCustomerList()
+        public List<TblCustomer> DALCustomerList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblCustomer", e);
+                throw new Exception("An error occured while listing the Customer", e);
             }
         }
 
-        public int DALTblCustomerAdd(TblCustomer customer)
+        public int DALCustomerAdd(TblCustomer customer)
         {
             try
             {
@@ -49,21 +49,21 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblCustomerUpdate(TblCustomer customer)
+        public int DALCustomerUpdate(TblCustomer customer)
         {
             try
             {
-                TblCustomer existingTblCustomer = dBMarketAppEntitiesContext.TblCustomer.Find(customer.customerId);
-                if (existingTblCustomer != null)
+                TblCustomer existingCustomer = dBMarketAppEntitiesContext.TblCustomer.Find(customer.customerId);
+                if (existingCustomer != null)
                 {
-                    existingTblCustomer.customerName = customer.customerName;
-                    existingTblCustomer.customerSurname = customer.customerSurname;
-                    existingTblCustomer.customerEmail = customer.customerEmail;
-                    existingTblCustomer.customerTelephoneNumber = customer.customerTelephoneNumber;
-                    existingTblCustomer.customerGender = customer.customerGender;
-                    existingTblCustomer.customerAddress = customer.customerAddress;
+                    existingCustomer.customerName = customer.customerName;
+                    existingCustomer.customerSurname = customer.customerSurname;
+                    existingCustomer.customerEmail = customer.customerEmail;
+                    existingCustomer.customerTelephoneNumber = customer.customerTelephoneNumber;
+                    existingCustomer.customerGender = customer.customerGender;
+                    existingCustomer.customerAddress = customer.customerAddress;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblCustomer.customerId;
+                    return existingCustomer.customerId;
                 }
                 else
                 {
@@ -76,16 +76,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblCustomerDelete(TblCustomer customer)
+        public int DALCustomerDelete(TblCustomer customer)
         {
             try
             {
-                TblCustomer existingTblCustomer = dBMarketAppEntitiesContext.TblCustomer.Find(customer.customerId);
-                if (existingTblCustomer != null)
+                TblCustomer existingCustomer = dBMarketAppEntitiesContext.TblCustomer.Find(customer.customerId);
+                if (existingCustomer != null)
                 {
-                    dBMarketAppEntitiesContext.TblCustomer.Remove(existingTblCustomer);
+                    dBMarketAppEntitiesContext.TblCustomer.Remove(existingCustomer);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblCustomer.customerId;
+                    return existingCustomer.customerId;
                 }
                 else
                 {
