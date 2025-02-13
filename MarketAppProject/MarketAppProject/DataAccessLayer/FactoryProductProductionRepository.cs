@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblFactoryProductProductionRepository : IDisposable
+    internal class FactoryProductProductionRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblFactoryProductProductionRepository()
+        public FactoryProductProductionRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblFactoryProductProduction> DALTblFactoryProductProductionList()
+        public List<TblFactoryProductProduction> DALFactoryProductProductionList()
         {
             try
             {
@@ -24,12 +24,12 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblFactoryProductProduction", e);
+                throw new Exception("An error occured while listing the FactoryProductProduction", e);
             }
         }
 
 
-        public int DALTblFactoryProductProductionAdd(TblFactoryProductProduction factoryProductProduction)
+        public int DALFactoryProductProductionAdd(TblFactoryProductProduction factoryProductProduction)
         {
             try
             {
@@ -51,20 +51,20 @@ namespace MarketAppProject.DataAccessLayer
         }
 
 
-        public int DALTblFactoryProductProductionUpdate(TblFactoryProductProduction factoryProductProduction)
+        public int DALFactoryProductProductionUpdate(TblFactoryProductProduction factoryProductProduction)
         {
             try
             {
-                TblFactoryProductProduction existingTblFactoryProductProduction = dBMarketAppEntitiesContext.TblFactoryProductProduction.Find(factoryProductProduction.factoryProductProductionId);
-                if (existingTblFactoryProductProduction != null)
+                TblFactoryProductProduction existingFactoryProductProduction = dBMarketAppEntitiesContext.TblFactoryProductProduction.Find(factoryProductProduction.factoryProductProductionId);
+                if (existingFactoryProductProduction != null)
                 {
-                    existingTblFactoryProductProduction.factoryId = factoryProductProduction.factoryId;
-                    existingTblFactoryProductProduction.productTemplateId = factoryProductProduction.productTemplateId;
-                    existingTblFactoryProductProduction.productQuantity = factoryProductProduction.productQuantity;
-                    existingTblFactoryProductProduction.productionDate = factoryProductProduction.productionDate;
-                    existingTblFactoryProductProduction.expirationDate = factoryProductProduction.expirationDate;
+                    existingFactoryProductProduction.factoryId = factoryProductProduction.factoryId;
+                    existingFactoryProductProduction.productTemplateId = factoryProductProduction.productTemplateId;
+                    existingFactoryProductProduction.productQuantity = factoryProductProduction.productQuantity;
+                    existingFactoryProductProduction.productionDate = factoryProductProduction.productionDate;
+                    existingFactoryProductProduction.expirationDate = factoryProductProduction.expirationDate;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblFactoryProductProduction.factoryProductProductionId;
+                    return existingFactoryProductProduction.factoryProductProductionId;
                 }
                 else
                 {
@@ -77,16 +77,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblFactoryProductProductionDelete(TblFactoryProductProduction factoryProductProduction)
+        public int DALFactoryProductProductionDelete(TblFactoryProductProduction factoryProductProduction)
         {
             try
             {
-                TblFactoryProductProduction existingTblFactoryProductProduction = dBMarketAppEntitiesContext.TblFactoryProductProduction.Find(factoryProductProduction.factoryProductProductionId);
-                if (existingTblFactoryProductProduction != null)
+                TblFactoryProductProduction existingFactoryProductProduction = dBMarketAppEntitiesContext.TblFactoryProductProduction.Find(factoryProductProduction.factoryProductProductionId);
+                if (existingFactoryProductProduction != null)
                 {
-                    dBMarketAppEntitiesContext.TblFactoryProductProduction.Remove(existingTblFactoryProductProduction);
+                    dBMarketAppEntitiesContext.TblFactoryProductProduction.Remove(existingFactoryProductProduction);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblFactoryProductProduction.factoryProductProductionId;
+                    return existingFactoryProductProduction.factoryProductProductionId;
                 }
                 else
                 {

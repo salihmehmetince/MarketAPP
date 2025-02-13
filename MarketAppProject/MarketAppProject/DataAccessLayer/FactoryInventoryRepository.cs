@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblFactoryInventoryRepository : IDisposable
+    internal class FactoryInventoryRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblFactoryInventoryRepository()
+        public FactoryInventoryRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblFactoryInventory> DALTblFactoryInventoryList()
+        public List<TblFactoryInventory> DALFactoryInventoryList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblFactoryInventory", e);
+                throw new Exception("An error occured while listing the FactoryInventory", e);
             }
         }
 
-        public int DALTblFactoryInventoryAdd(TblFactoryInventory factoryInventory)
+        public int DALFactoryInventoryAdd(TblFactoryInventory factoryInventory)
         {
             try
             {
@@ -49,18 +49,18 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblFactoryInventoryUpdate(TblFactoryInventory factoryInventory)
+        public int DALFactoryInventoryUpdate(TblFactoryInventory factoryInventory)
         {
             try
             {
-                TblFactoryInventory existingTblFactoryInventory = dBMarketAppEntitiesContext.TblFactoryInventory.Find(factoryInventory.factoryInventoryId);
-                if (existingTblFactoryInventory != null)
+                TblFactoryInventory existingFactoryInventory = dBMarketAppEntitiesContext.TblFactoryInventory.Find(factoryInventory.factoryInventoryId);
+                if (existingFactoryInventory != null)
                 {
-                    existingTblFactoryInventory.factoryId = factoryInventory.factoryId;
-                    existingTblFactoryInventory.productTemplateId = factoryInventory.productTemplateId;
-                    existingTblFactoryInventory.totalAmount = factoryInventory.totalAmount;
+                    existingFactoryInventory.factoryId = factoryInventory.factoryId;
+                    existingFactoryInventory.productTemplateId = factoryInventory.productTemplateId;
+                    existingFactoryInventory.totalAmount = factoryInventory.totalAmount;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblFactoryInventory.factoryInventoryId;
+                    return existingFactoryInventory.factoryInventoryId;
                 }
                 else
                 {
@@ -73,16 +73,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblFactoryInventoryDelete(TblFactoryInventory factoryInventory)
+        public int DALFactoryInventoryDelete(TblFactoryInventory factoryInventory)
         {
             try
             {
-                TblFactoryInventory existingTblFactoryInventory = dBMarketAppEntitiesContext.TblFactoryInventory.Find(factoryInventory.factoryInventoryId);
-                if (existingTblFactoryInventory != null)
+                TblFactoryInventory existingFactoryInventory = dBMarketAppEntitiesContext.TblFactoryInventory.Find(factoryInventory.factoryInventoryId);
+                if (existingFactoryInventory != null)
                 {
-                    dBMarketAppEntitiesContext.TblFactoryInventory.Remove(existingTblFactoryInventory);
+                    dBMarketAppEntitiesContext.TblFactoryInventory.Remove(existingFactoryInventory);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblFactoryInventory.factoryInventoryId;
+                    return existingFactoryInventory.factoryInventoryId;
                 }
                 else
                 {

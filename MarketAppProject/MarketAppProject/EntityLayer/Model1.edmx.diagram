@@ -30,7 +30,6 @@
         <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryHasVehicle" Width="1.5" PointX="11.25" PointY="27.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryInventory" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryProducedProduct" Width="1.5" PointX="8.25" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryProductProduction" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblFactorySendsProductToMarket" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblFactorySendsProductToWarehouse" Width="1.5" PointX="11.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblMarket" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
@@ -96,11 +95,9 @@
         <AssociationConnector Association="DBMarketAppModel.FK_factoryIdFactorySendsProductToMarket" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_factoryIdFactorySendsProductToWarehouse" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_factoryIdProducedProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdProductProduction" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_vehicleHVId" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdFactoryInventory" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdProducedProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdProductProduction" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_marketIdFactorySendsProductToMarket" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdFactorySendsProductToMarket" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_sendVehicleFactorySendsProductToMarket" ManuallyRouted="false" />
@@ -131,6 +128,9 @@
         <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseInventory" ManuallyRouted="false" />
         <AssociationConnector Association="DBMarketAppModel.FK_warehouseIdWarehouseSendsToMarket" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DBMarketAppModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblFactoryProductProduction" Width="1.5" PointX="8.25" PointY="14.875" />
+        <AssociationConnector Association="DBMarketAppModel.FK_factoryIdProductProduction" />
+        <AssociationConnector Association="DBMarketAppModel.FK_productTemplateIdProductProduction" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -19,7 +19,7 @@ namespace MarketAppProject.EntityLayer
         public int productTemplateId { get; set; }
         public int productQuantity { get; set; }
         public System.DateTime productionDate { get; set; }
-        public int expirationDate { get; set; }
+        public System.DateTime expirationDate { get; set; }
     
         public virtual TblFactory TblFactory { get; set; }
         public virtual TblProductTemplate TblProductTemplate { get; set; }

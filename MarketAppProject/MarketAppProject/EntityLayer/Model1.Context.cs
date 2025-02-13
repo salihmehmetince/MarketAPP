@@ -52,7 +52,6 @@ namespace MarketAppProject.EntityLayer
         public virtual DbSet<TblFactoryHasVehicle> TblFactoryHasVehicle { get; set; }
         public virtual DbSet<TblFactoryInventory> TblFactoryInventory { get; set; }
         public virtual DbSet<TblFactoryProducedProduct> TblFactoryProducedProduct { get; set; }
-        public virtual DbSet<TblFactoryProductProduction> TblFactoryProductProduction { get; set; }
         public virtual DbSet<TblFactorySendsProductToMarket> TblFactorySendsProductToMarket { get; set; }
         public virtual DbSet<TblFactorySendsProductToWarehouse> TblFactorySendsProductToWarehouse { get; set; }
         public virtual DbSet<TblMarket> TblMarket { get; set; }
@@ -79,6 +78,7 @@ namespace MarketAppProject.EntityLayer
         public virtual DbSet<TblWarehouseInventory> TblWarehouseInventory { get; set; }
         public virtual DbSet<TblWarehouseSendsToMarket> TblWarehouseSendsToMarket { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TblFactoryProductProduction> TblFactoryProductProduction { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

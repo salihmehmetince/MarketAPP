@@ -21,12 +21,12 @@ namespace MarketAppProject.EntityLayer
             this.TblCreditCardSaleDetail = new HashSet<TblCreditCardSaleDetail>();
             this.TblFactoryInventory = new HashSet<TblFactoryInventory>();
             this.TblFactoryProducedProduct = new HashSet<TblFactoryProducedProduct>();
-            this.TblFactoryProductProduction = new HashSet<TblFactoryProductProduction>();
             this.TblFactorySendsProductToMarket = new HashSet<TblFactorySendsProductToMarket>();
             this.TblFactorySendsProductToWarehouse = new HashSet<TblFactorySendsProductToWarehouse>();
             this.TblMarketInventory = new HashSet<TblMarketInventory>();
             this.TblWarehouseInventory = new HashSet<TblWarehouseInventory>();
             this.TblWarehouseSendsToMarket = new HashSet<TblWarehouseSendsToMarket>();
+            this.TblFactoryProductProduction = new HashSet<TblFactoryProductProduction>();
         }
     
         public int productTemplateId { get; set; }
@@ -50,8 +50,6 @@ namespace MarketAppProject.EntityLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblFactoryProducedProduct> TblFactoryProducedProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblFactoryProductProduction> TblFactoryProductProduction { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblFactorySendsProductToMarket> TblFactorySendsProductToMarket { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblFactorySendsProductToWarehouse> TblFactorySendsProductToWarehouse { get; set; }
@@ -65,5 +63,7 @@ namespace MarketAppProject.EntityLayer
         public virtual ICollection<TblWarehouseSendsToMarket> TblWarehouseSendsToMarket { get; set; }
         public virtual TblProductType TblProductType { get; set; }
         public virtual TblProductUnit TblProductUnit { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblFactoryProductProduction> TblFactoryProductProduction { get; set; }
     }
 }
