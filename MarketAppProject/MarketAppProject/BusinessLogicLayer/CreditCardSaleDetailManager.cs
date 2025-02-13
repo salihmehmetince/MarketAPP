@@ -23,12 +23,21 @@ namespace MarketAppProject.BusinessLogicLayer
         {
             if (creditCardSaleDetail.creditCardSaleId<0
                 ||creditCardSaleDetail.productTemplateId<0
-                ||creditCardSaleDetail.price<0
                 ||creditCardSaleDetail.quantity<0
                 ||creditCardSaleDetail.productTotalPrice<0
                 )
             {
                 return -1;
+            }
+            else
+            {
+                if(creditCardSaleDetail.price.HasValue)
+                {
+                    if(creditCardSaleDetail.price<0)
+                    {
+                        return -1;
+                    }
+                }
             }
 
             using (var repository = new CreditCardSaleDetailRepository())
@@ -41,12 +50,23 @@ namespace MarketAppProject.BusinessLogicLayer
             if (creditCardSaleDetail.creditCardSaleDetailId<0
                 ||creditCardSaleDetail.creditCardSaleId<0
                 ||creditCardSaleDetail.productTemplateId<0
-                ||creditCardSaleDetail.price<0
+                ||!creditCardSaleDetail.price.HasValue
+                || creditCardSaleDetail.price<0
                 ||creditCardSaleDetail.quantity<0
                 ||creditCardSaleDetail.productTotalPrice<0
                 )
             {
                 return -1;
+            }
+            else
+            {
+                if (creditCardSaleDetail.price.HasValue)
+                {
+                    if (creditCardSaleDetail.price < 0)
+                    {
+                        return -1;
+                    }
+                }
             }
 
             using (var repository = new CreditCardSaleDetailRepository())

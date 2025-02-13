@@ -24,9 +24,17 @@ namespace MarketAppProject.HelperFunctions
         
         public static bool checkDateTimeField(DateTime? date)
         {
-            if (date.Value.Year<1900 || date.Value.Year>3000)
+            if (date.HasValue) 
             {
-                return false;
+                if (date.Value.Year < 1900
+                    || date.Value.Year > 3000)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
@@ -76,13 +84,28 @@ namespace MarketAppProject.HelperFunctions
 
         public static bool checkAddressField(string address)
         {
-            if(address.Length>0 || address.Length<255)
+            if(address.Length<0 || address.Length>255)
             {
-                return true;
+                return false;
             }
             else
             {
                 return false;
+            }
+        }
+
+        public static bool checkBasicStringField(string stringField,int minLength,int maxLength)
+        {
+            if (string.IsNullOrWhiteSpace(stringField)
+                || stringField.Length < minLength
+                || stringField.Length>maxLength
+                ) 
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

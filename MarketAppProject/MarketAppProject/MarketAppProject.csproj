@@ -69,7 +69,11 @@
     <Compile Include="BusinessLogicLayer\CreditCardSaleDetailManager.cs" />
     <Compile Include="BusinessLogicLayer\CurrencyManager.cs" />
     <Compile Include="BusinessLogicLayer\CustomerBuysProductWithCashManager.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerBuysProductWithCreditCardManager.cs" />
     <Compile Include="BusinessLogicLayer\CustomerManager.cs" />
+    <Compile Include="BusinessLogicLayer\DepartmentTypeManager.cs" />
+    <Compile Include="BusinessLogicLayer\EmployeeManager.cs" />
+    <Compile Include="BusinessLogicLayer\EquipmentManager.cs" />
     <Compile Include="DataAccessLayer\AdminRepository.cs" />
     <Compile Include="DataAccessLayer\AppCurrencyRepository.cs" />
     <Compile Include="DataAccessLayer\CashSaleDetailRepository.cs" />
@@ -103,7 +107,7 @@
     <Compile Include="DataAccessLayer\RankTypeRepository.cs" />
     <Compile Include="DataAccessLayer\CreditCardSaleDetailRepository.cs" />
     <Compile Include="DataAccessLayer\CustomerBuysProductWithCashRepository.cs" />
-    <Compile Include="DataAccessLayer\TblCustomerBuysProductWithCreditCardRepository.cs" />
+    <Compile Include="DataAccessLayer\CustomerBuysProductWithCreditCardRepository.cs" />
     <Compile Include="DataAccessLayer\CustomerRepository.cs" />
     <Compile Include="DataAccessLayer\TblFactoryInventoryRepository.cs" />
     <Compile Include="DataAccessLayer\TblFactoryProducedProductRepository.cs" />

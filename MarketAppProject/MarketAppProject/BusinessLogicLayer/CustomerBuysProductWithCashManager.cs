@@ -27,11 +27,26 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
                 ||customerBuysProductWithCash.saleCurrency<0
                 ||customerBuysProductWithCash.customerCurrency<0
-                ||customerBuysProductWithCash.currencySaleMomentValue<0
-                ||customerBuysProductWithCash.customerPaidInCurrency<0
                 )
             {
                 return -1;
+            }
+            else
+            {
+                if(customerBuysProductWithCash.currencySaleMomentValue.HasValue)
+                {
+                    if(customerBuysProductWithCash.currencySaleMomentValue<0)
+                    {
+                        return -1;
+                    }
+                }
+                if(customerBuysProductWithCash.customerPaidInCurrency.HasValue)
+                {
+                    if(customerBuysProductWithCash.customerPaidInCurrency < 0)
+                    {
+                        return -1;
+                    }
+                }
             }
 
             using (var repository = new CustomerBuysProductWithCashRepository())
@@ -48,11 +63,26 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
                 ||customerBuysProductWithCash.saleCurrency<0
                 ||customerBuysProductWithCash.customerCurrency<0
-                ||customerBuysProductWithCash.currencySaleMomentValue<0
-                ||customerBuysProductWithCash.customerPaidInCurrency<0
                 )
             {
                 return -1;
+            }
+            else
+            {
+                if (customerBuysProductWithCash.currencySaleMomentValue.HasValue)
+                {
+                    if (customerBuysProductWithCash.currencySaleMomentValue < 0)
+                    {
+                        return -1;
+                    }
+                }
+                if (customerBuysProductWithCash.customerPaidInCurrency.HasValue)
+                {
+                    if (customerBuysProductWithCash.customerPaidInCurrency < 0)
+                    {
+                        return -1;
+                    }
+                }
             }
 
             using (var repository = new CustomerBuysProductWithCashRepository())
