@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblMarketInventoryRepository : IDisposable
+    internal class MarketInventoryRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblMarketInventoryRepository()
+        public MarketInventoryRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblMarketInventory> DALTblMarketInventoryList()
+        public List<TblMarketInventory> DALMarketInventoryList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblMarketInventory", e);
+                throw new Exception("An error occured while listing the MarketInventory", e);
             }
         }
 
-        public int DALTblMarketInventoryAdd(TblMarketInventory marketInventory)
+        public int DALMarketInventoryAdd(TblMarketInventory marketInventory)
         {
             try
             {
@@ -49,18 +49,18 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblMarketInventoryUpdate(TblMarketInventory marketInventory)
+        public int DALMarketInventoryUpdate(TblMarketInventory marketInventory)
         {
             try
             {
-                TblMarketInventory existingTblMarketInventory = dBMarketAppEntitiesContext.TblMarketInventory.Find(marketInventory.marketInventoryId);
-                if (existingTblMarketInventory != null)
+                TblMarketInventory existingMarketInventory = dBMarketAppEntitiesContext.TblMarketInventory.Find(marketInventory.marketInventoryId);
+                if (existingMarketInventory != null)
                 {
-                    existingTblMarketInventory.marketId = marketInventory.marketInventoryId;
-                    existingTblMarketInventory.productTemplateId = marketInventory.productTemplateId;
-                    existingTblMarketInventory.totalAmount = marketInventory.totalAmount;
+                    existingMarketInventory.marketId = marketInventory.marketInventoryId;
+                    existingMarketInventory.productTemplateId = marketInventory.productTemplateId;
+                    existingMarketInventory.totalAmount = marketInventory.totalAmount;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblMarketInventory.marketInventoryId;
+                    return existingMarketInventory.marketInventoryId;
                 }
                 else
                 {
@@ -73,16 +73,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblMarketInventoryDelete(TblMarketInventory marketInventory)
+        public int DALMarketInventoryDelete(TblMarketInventory marketInventory)
         {
             try
             {
-                TblMarketInventory existingTblMarketInventory = dBMarketAppEntitiesContext.TblMarketInventory.Find(marketInventory.marketInventoryId);
-                if (existingTblMarketInventory != null)
+                TblMarketInventory existingMarketInventory = dBMarketAppEntitiesContext.TblMarketInventory.Find(marketInventory.marketInventoryId);
+                if (existingMarketInventory != null)
                 {
-                    dBMarketAppEntitiesContext.TblMarketInventory.Remove(existingTblMarketInventory);
+                    dBMarketAppEntitiesContext.TblMarketInventory.Remove(existingMarketInventory);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblMarketInventory.marketInventoryId;
+                    return existingMarketInventory.marketInventoryId;
                 }
                 else
                 {

@@ -49,7 +49,7 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALVehicleUpdating(TblVehicle vehicle)
+        public int DALVehicleUpdate(TblVehicle vehicle)
         {
             try
             {
@@ -72,6 +72,27 @@ namespace MarketAppProject.DataAccessLayer
             catch (Exception e)
             {
                 throw new Exception("An error occured while updating the vehicle", e);
+            }
+        }
+        public int DALVehicleDelete(TblVehicle vehicle)
+        {
+            try
+            {
+                TblVehicle existinVehicle = dBMarketAppEntitiesContext.TblVehicle.Find(vehicle.vehicleId);
+                if(existinVehicle != null)
+                {
+                    dBMarketAppEntitiesContext.TblVehicle.Remove(existinVehicle);
+                    dBMarketAppEntitiesContext.SaveChanges();
+                    return existinVehicle.vehicleId;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("An error occured while deleting the vehicle", e);
             }
         }
 
