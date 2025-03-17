@@ -93,6 +93,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCustomerBuysProductWithCashDelete(TblCustomerBuysProductWithCash customerBuysProductWithCash)
         {
+            if (customerBuysProductWithCash.customerBuysProductWithCashId < 0)
+            {
+                return -1;
+            }
             using (var repository = new CustomerBuysProductWithCashRepository())
             {
                 return repository.DALCustomerBuysProductWithCashDelete(customerBuysProductWithCash);

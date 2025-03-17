@@ -51,6 +51,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCompanyDelete(TblCompany company)
         {
+            if(company.companyId<0)
+            {
+                return -1;
+            }
             using (var repository = new CompanyRepository())
             {
                 return repository.DALCompanyDelete(company);

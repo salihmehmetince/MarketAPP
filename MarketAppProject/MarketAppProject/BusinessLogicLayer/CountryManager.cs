@@ -57,6 +57,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCountryDelete(TblCountry country)
         {
+            if (country.countryId < 0)
+            {
+                return -1;
+            }
             using (var repository = new CountryRepository())
             {
                 return repository.DALCountryDelete(country);

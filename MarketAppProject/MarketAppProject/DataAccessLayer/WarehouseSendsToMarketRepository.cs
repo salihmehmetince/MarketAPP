@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblWarehouseSendsToMarketRepository : IDisposable
+    internal class WarehouseSendsToMarketRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblWarehouseSendsToMarketRepository()
+        public WarehouseSendsToMarketRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblWarehouseSendsToMarket> DALTblWarehouseSendsToMarketList()
+        public List<TblWarehouseSendsToMarket> DALWarehouseSendsToMarketList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblWarehouseSendsToMarket", e);
+                throw new Exception("An error occured while listing the WarehouseSendsToMarket", e);
             }
         }
 
-        public int DALTblWarehouseSendsToMarketAdd(TblWarehouseSendsToMarket warehouseSendsToMarket)
+        public int DALWarehouseSendsToMarketAdd(TblWarehouseSendsToMarket warehouseSendsToMarket)
         {
             try
             {
@@ -49,21 +49,21 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblWarehouseSendsToMarketUpdate(TblWarehouseSendsToMarket warehouseSendsToMarket)
+        public int DALWarehouseSendsToMarketUpdate(TblWarehouseSendsToMarket warehouseSendsToMarket)
         {
             try
             {
-                TblWarehouseSendsToMarket existingTblWarehouseSendsToMarket = dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Find(warehouseSendsToMarket.warehouseSendsToMarketId);
-                if (existingTblWarehouseSendsToMarket != null)
+                TblWarehouseSendsToMarket existingWarehouseSendsToMarket = dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Find(warehouseSendsToMarket.warehouseSendsToMarketId);
+                if (existingWarehouseSendsToMarket != null)
                 {
-                    existingTblWarehouseSendsToMarket.warehouseId = warehouseSendsToMarket.warehouseId;
-                    existingTblWarehouseSendsToMarket.marketId = warehouseSendsToMarket.marketId;
-                    existingTblWarehouseSendsToMarket.productTemplateId = warehouseSendsToMarket.productTemplateId;
-                    existingTblWarehouseSendsToMarket.productQuantity = warehouseSendsToMarket.productQuantity;
-                    existingTblWarehouseSendsToMarket.sendDate = warehouseSendsToMarket.sendDate;
-                    existingTblWarehouseSendsToMarket.sendVehicle = warehouseSendsToMarket.sendVehicle;
+                    existingWarehouseSendsToMarket.warehouseId = warehouseSendsToMarket.warehouseId;
+                    existingWarehouseSendsToMarket.marketId = warehouseSendsToMarket.marketId;
+                    existingWarehouseSendsToMarket.productTemplateId = warehouseSendsToMarket.productTemplateId;
+                    existingWarehouseSendsToMarket.productQuantity = warehouseSendsToMarket.productQuantity;
+                    existingWarehouseSendsToMarket.sendDate = warehouseSendsToMarket.sendDate;
+                    existingWarehouseSendsToMarket.sendVehicle = warehouseSendsToMarket.sendVehicle;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblWarehouseSendsToMarket.warehouseSendsToMarketId;
+                    return existingWarehouseSendsToMarket.warehouseSendsToMarketId;
                 }
                 else
                 {
@@ -76,16 +76,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblWarehouseSendsToMarketDelete(TblWarehouseSendsToMarket warehouseSendsToMarket)
+        public int DALWarehouseSendsToMarketDelete(TblWarehouseSendsToMarket warehouseSendsToMarket)
         {
             try
             {
-                TblWarehouseSendsToMarket existingTblWarehouseSendsToMarket = dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Find(warehouseSendsToMarket.warehouseSendsToMarketId);
-                if (existingTblWarehouseSendsToMarket != null)
+                TblWarehouseSendsToMarket existingWarehouseSendsToMarket = dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Find(warehouseSendsToMarket.warehouseSendsToMarketId);
+                if (existingWarehouseSendsToMarket != null)
                 {
-                    dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Remove(existingTblWarehouseSendsToMarket);
+                    dBMarketAppEntitiesContext.TblWarehouseSendsToMarket.Remove(existingWarehouseSendsToMarket);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblWarehouseSendsToMarket.warehouseSendsToMarketId;
+                    return existingWarehouseSendsToMarket.warehouseSendsToMarketId;
                 }
                 else
                 {

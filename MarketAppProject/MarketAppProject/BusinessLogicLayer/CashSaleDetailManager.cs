@@ -73,6 +73,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCashSaleDetailDelete(TblCashSaleDetail cashSaleDetail)
         {
+            if (cashSaleDetail.cashSaleDetailId < 0)
+            {
+                return -1;
+            }
             using (var repository = new CashSaleDetailRepository())
             {
                 return repository.DALCashSaleDetailDelete(cashSaleDetail);

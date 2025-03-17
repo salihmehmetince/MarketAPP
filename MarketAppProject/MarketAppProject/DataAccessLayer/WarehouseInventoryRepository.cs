@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MarketAppProject.DataAccessLayer
 {
-    internal class TblWarehouseInventoryRepository : IDisposable
+    internal class WarehouseInventoryRepository : IDisposable
     {
         private readonly DBMarketAppEntities dBMarketAppEntitiesContext;
 
-        public TblWarehouseInventoryRepository()
+        public WarehouseInventoryRepository()
         {
             dBMarketAppEntitiesContext = new DBMarketAppEntities();
         }
 
-        public List<TblWarehouseInventory> DALTblWarehouseInventoryList()
+        public List<TblWarehouseInventory> DALWarehouseInventoryList()
         {
             try
             {
@@ -24,11 +24,11 @@ namespace MarketAppProject.DataAccessLayer
             }
             catch (Exception e)
             {
-                throw new Exception("An error occured while listing the TblWarehouseInventory", e);
+                throw new Exception("An error occured while listing the WarehouseInventory", e);
             }
         }
 
-        public int DALTblWarehouseInventoryAdd(TblWarehouseInventory warehouseInventory)
+        public int DALWarehouseInventoryAdd(TblWarehouseInventory warehouseInventory)
         {
             try
             {
@@ -49,18 +49,18 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblWarehouseInventoryUpdate(TblWarehouseInventory warehouseInventory)
+        public int DALWarehouseInventoryUpdate(TblWarehouseInventory warehouseInventory)
         {
             try
             {
-                TblWarehouseInventory existingTblWarehouseInventory = dBMarketAppEntitiesContext.TblWarehouseInventory.Find(warehouseInventory.warehouseInventoryId);
-                if (existingTblWarehouseInventory != null)
+                TblWarehouseInventory existingWarehouseInventory = dBMarketAppEntitiesContext.TblWarehouseInventory.Find(warehouseInventory.warehouseInventoryId);
+                if (existingWarehouseInventory != null)
                 {
-                    existingTblWarehouseInventory.warehouseId = warehouseInventory.warehouseId;
-                    existingTblWarehouseInventory.productTemplateId = warehouseInventory.productTemplateId;
-                    existingTblWarehouseInventory.totalAmount = warehouseInventory.totalAmount;
+                    existingWarehouseInventory.warehouseId = warehouseInventory.warehouseId;
+                    existingWarehouseInventory.productTemplateId = warehouseInventory.productTemplateId;
+                    existingWarehouseInventory.totalAmount = warehouseInventory.totalAmount;
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblWarehouseInventory.warehouseInventoryId;
+                    return existingWarehouseInventory.warehouseInventoryId;
                 }
                 else
                 {
@@ -73,16 +73,16 @@ namespace MarketAppProject.DataAccessLayer
             }
         }
 
-        public int DALTblWarehouseInventoryDelete(TblWarehouseInventory warehouseInventory)
+        public int DALWarehouseInventoryDelete(TblWarehouseInventory warehouseInventory)
         {
             try
             {
-                TblWarehouseInventory existingTblWarehouseInventory = dBMarketAppEntitiesContext.TblWarehouseInventory.Find(warehouseInventory.warehouseInventoryId);
-                if (existingTblWarehouseInventory != null)
+                TblWarehouseInventory existingWarehouseInventory = dBMarketAppEntitiesContext.TblWarehouseInventory.Find(warehouseInventory.warehouseInventoryId);
+                if (existingWarehouseInventory != null)
                 {
-                    dBMarketAppEntitiesContext.TblWarehouseInventory.Remove(existingTblWarehouseInventory);
+                    dBMarketAppEntitiesContext.TblWarehouseInventory.Remove(existingWarehouseInventory);
                     dBMarketAppEntitiesContext.SaveChanges();
-                    return existingTblWarehouseInventory.warehouseInventoryId;
+                    return existingWarehouseInventory.warehouseInventoryId;
                 }
                 else
                 {

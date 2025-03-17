@@ -32,6 +32,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLAdminDelete(TblAdmin admin)
         {
+            if(admin.adminId<0)
+            {
+                return -1;
+            }
             using (var repository = new AdminRepository())
             {
                 return repository.DALAdminDelete(admin);

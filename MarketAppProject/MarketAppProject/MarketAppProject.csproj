@@ -92,6 +92,11 @@
     <Compile Include="BusinessLogicLayer\VehicleManager.cs" />
     <Compile Include="BusinessLogicLayer\VehicleModelManager.cs" />
     <Compile Include="BusinessLogicLayer\VehicleTypeManager.cs" />
+    <Compile Include="BusinessLogicLayer\WarehouseHasEmplyeeManager.cs" />
+    <Compile Include="BusinessLogicLayer\WareHouseHasEquipmentManager.cs" />
+    <Compile Include="BusinessLogicLayer\WarehouseHasVehicleManager.cs" />
+    <Compile Include="BusinessLogicLayer\WarehouseInventoryManager.cs" />
+    <Compile Include="BusinessLogicLayer\WarehouseSendsToMarketManager.cs" />
     <Compile Include="DataAccessLayer\AdminRepository.cs" />
     <Compile Include="DataAccessLayer\AppCurrencyRepository.cs" />
     <Compile Include="DataAccessLayer\CashSaleDetailRepository.cs" />
@@ -141,8 +146,8 @@
     <Compile Include="DataAccessLayer\FactorySendsProductToMarketRepository.cs" />
     <Compile Include="DataAccessLayer\FactorySendsProductToWarehouseRepository.cs" />
     <Compile Include="DataAccessLayer\MarketInventoryRepository.cs" />
-    <Compile Include="DataAccessLayer\TblWarehouseInventoryRepository.cs" />
-    <Compile Include="DataAccessLayer\TblWarehouseSendsToMarketRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseInventoryRepository.cs" />
+    <Compile Include="DataAccessLayer\WarehouseSendsToMarketRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleBrandRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleModelRepository.cs" />
     <Compile Include="DataAccessLayer\VehicleRepository.cs" />

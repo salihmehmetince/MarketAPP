@@ -50,6 +50,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLAppCurrencyDelete(TblAppCurrency appCurrency)
         {
+            if (appCurrency.appCurrencyId < 0)
+            {
+                return -1;
+            }
             using (var repository = new AppCurrencyRepository())
             {
                 return repository.DALAppCurrencyDelete(appCurrency);

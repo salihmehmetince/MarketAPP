@@ -77,6 +77,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCreditCardSaleDetailDelete(TblCreditCardSaleDetail creditCardSaleDetail)
         {
+            if (creditCardSaleDetail.creditCardSaleDetailId < 0)
+            {
+                return -1;
+            }
             using (var repository = new CreditCardSaleDetailRepository())
             {
                 return repository.DALCreditCardSaleDetailDelete(creditCardSaleDetail);
