@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyHasMarket" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyHasWarehouse" Width="1.5" PointX="14.25" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyOwerHasCompany" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyOwner" Width="1.5" PointX="9" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyOwner" Width="2" PointX="9" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblCompanyType" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblCountry" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBMarketAppModel.TblCreditCardSaleDetail" Width="1.5" PointX="8.25" PointY="21.75" IsExpanded="true" />

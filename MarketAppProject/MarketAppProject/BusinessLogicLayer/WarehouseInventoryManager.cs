@@ -53,6 +53,10 @@ namespace MarketAppProject.BusinessLogicLayer
         }
         public int BLWarehouseInventoryDelete(TblWarehouseInventory warehouseInventory)
         {
+            if(warehouseInventory.warehouseInventoryId<0)
+            {
+                return -1;
+            }
 
             using (var repository = new WarehouseInventoryRepository())
             {

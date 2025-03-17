@@ -4,6 +4,7 @@ create table TblCompanyOwner(
 	companyOwnerName nvarchar(40) not null,
 	companyOwnerSurname nvarchar(40) not null,
 	companyOwnerEmail nvarchar(50) not null,
+	companyOwnerPassword nvarchar(40) not null,
 	companyOwnerTelephoneNumber varchar(30) not null,
 	companyOwnerGender char(1) not null,
 	companyOwnerBirthDate date not null,

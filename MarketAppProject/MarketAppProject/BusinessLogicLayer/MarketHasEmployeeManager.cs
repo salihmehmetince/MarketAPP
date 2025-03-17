@@ -56,6 +56,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLMarketHasEmployeeDelete(TblMarketHasEmployee marketHasEmployee)
         {
+            if(marketHasEmployee.marketHasEmployeeId<0)
+            {
+                return -1;
+            }
             using (var repository = new MarketHasEmployeeRepository())
             {
                 return repository.DALMarketHasEmployeeDelete(marketHasEmployee);

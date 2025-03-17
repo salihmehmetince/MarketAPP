@@ -55,6 +55,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLVehicleDelete(TblVehicle vehicle)
         {
+            if(vehicle.vehicleId< 0)
+            {
+                return -1;
+            }
             using (var repository = new VehicleRepository())
             {
                 return repository.DALVehicleDelete(vehicle);

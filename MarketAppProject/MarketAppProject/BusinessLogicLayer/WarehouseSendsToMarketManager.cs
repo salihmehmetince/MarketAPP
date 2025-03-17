@@ -60,6 +60,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLWarehouseSendsToMarketDelete(TblWarehouseSendsToMarket warehouseSendsToMarket)
         {
+            if(warehouseSendsToMarket.warehouseSendsToMarketId<0)
+            {
+                return -1;
+            }
             using (var repository = new WarehouseSendsToMarketRepository())
             {
                 return repository.DALWarehouseSendsToMarketDelete(warehouseSendsToMarket);

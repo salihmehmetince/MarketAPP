@@ -31,6 +31,7 @@ namespace MarketAppProject.EntityLayer
         public string companyOwnerBirthPlace { get; set; }
         public string companyOwnerAddress { get; set; }
         public int companyOwnerProfession { get; set; }
+        public string companyOwnerPassword { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCompanyOwerHasCompany> TblCompanyOwerHasCompany { get; set; }

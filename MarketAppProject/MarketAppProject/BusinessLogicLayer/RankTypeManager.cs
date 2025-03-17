@@ -50,6 +50,10 @@ namespace MarketAppProject.BusinessLogicLayer
         }
         public int BLRankTypeDelete(TblRankType rankType)
         {
+            if(rankType.rankTypeId<0)
+            {
+                return -1;
+            }
             using (var repository = new RankTypeRepository())
             {
                 return repository.DALRankTypeDelete(rankType);

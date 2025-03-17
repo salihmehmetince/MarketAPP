@@ -59,6 +59,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLFactorySendsProductToWarehouseDelete(TblFactorySendsProductToWarehouse factorySendsProductToWarehouse)
         {
+            if(factorySendsProductToWarehouse.factorySendsProductToWarehouseId<0)
+            {
+                return -1;
+            }
             using (var repository = new FactorySendsProductToWarehouseRepository())
             {
                 return repository.DALFactorySendsProductToWarehouseDelete(factorySendsProductToWarehouse);

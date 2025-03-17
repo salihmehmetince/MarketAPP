@@ -111,6 +111,7 @@
           <Property Name="companyOwnerBirthPlace" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="companyOwnerAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="companyOwnerProfession" Type="int" Nullable="false" />
+          <Property Name="companyOwnerPassword" Type="nvarchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="TblCompanyType">
           <Key>
@@ -1919,6 +1920,7 @@
           <Property Name="companyOwnerProfession" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TblCompanyOwerHasCompany" Relationship="Self.FK_companyOwner" FromRole="TblCompanyOwner" ToRole="TblCompanyOwerHasCompany" />
           <NavigationProperty Name="TblProfession" Relationship="Self.FK_companyOwnerProfession" FromRole="TblCompanyOwner" ToRole="TblProfession" />
+          <Property Name="companyOwnerPassword" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblCompanyType">
           <Key>
@@ -3851,6 +3853,7 @@
           <EntitySetMapping Name="TblCompanyOwner">
             <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyOwner">
               <MappingFragment StoreEntitySet="TblCompanyOwner">
+                <ScalarProperty Name="companyOwnerPassword" ColumnName="companyOwnerPassword" />
                 <ScalarProperty Name="companyOwnerId" ColumnName="companyOwnerId" />
                 <ScalarProperty Name="companyOwnerIdentityNumber" ColumnName="companyOwnerIdentityNumber" />
                 <ScalarProperty Name="companyOwnerName" ColumnName="companyOwnerName" />

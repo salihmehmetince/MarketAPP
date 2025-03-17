@@ -67,6 +67,11 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLCustomerDelete(TblCustomer customer)
         {
+            if(customer.customerId<0)
+            {  
+                return -1;
+            }
+
             using (var repository = new CustomerRepository())
             {
                 return repository.DALCustomerDelete(customer);

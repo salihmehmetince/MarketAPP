@@ -90,6 +90,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLEmployeeDelete(TblEmployee employee)
         {
+            if(employee.employeeId < 0)
+            {
+                return -1;
+            }
             using (var repository = new EmployeeRepository())
             {
                 return repository.DALEmployeeDelete(employee);

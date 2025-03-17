@@ -49,6 +49,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLEquipmentDelete(TblEquipment equipment)
         {
+            if(equipment.equipmentId<0)
+            {
+                return-1;
+            }
             using (var repository = new EquipmentRepository())
             {
                 return repository.DALEquipmentDelete(equipment);

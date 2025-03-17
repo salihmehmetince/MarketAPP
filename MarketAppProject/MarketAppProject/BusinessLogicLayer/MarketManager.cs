@@ -54,6 +54,10 @@ namespace MarketAppProject.BusinessLogicLayer
         }
         public int BLMarketDelete(TblMarket market)
         {
+            if(market.marketId<0)
+            {
+                return -1;
+            }
             using (var repository = new MarketRepository())
             {
                 return repository.DALMarketDelete(market);

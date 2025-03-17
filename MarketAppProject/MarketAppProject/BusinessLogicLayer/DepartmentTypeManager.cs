@@ -51,6 +51,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLDepartmentTypeDelete(TblDepartmentType departmentType)
         {
+            if(departmentType.departmentTypeId<0)
+            {
+                return -1;
+            }
             using (var repository = new DepartmentTypeRepository())
             {
                 return repository.DALDepartmentTypeDelete(departmentType);

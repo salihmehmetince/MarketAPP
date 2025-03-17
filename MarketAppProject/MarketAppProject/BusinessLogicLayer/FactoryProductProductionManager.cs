@@ -57,6 +57,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLFactoryProductProductionDelete(TblFactoryProductProduction factoryProductProduction)
         {
+            if(factoryProductProduction.factoryProductProductionId<0)
+            {
+                return -1;
+            }
             using (var repository = new FactoryProductProductionRepository())
             {
                 return repository.DALFactoryProductProductionDelete(factoryProductProduction);

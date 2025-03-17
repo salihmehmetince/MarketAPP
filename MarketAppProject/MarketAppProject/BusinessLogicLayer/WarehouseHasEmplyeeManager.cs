@@ -54,6 +54,10 @@ namespace MarketAppProject.BusinessLogicLayer
         }
         public int BLWarehouseHasEmployeeDelete(TblWarehouseHasEmployee warehouseHasEmployee)
         {
+            if(warehouseHasEmployee.warehouseHasEmployeeId<0)
+            {
+                return -1;
+            }
             using (var repository = new WarehouseHasEmplyeeRepository())
             {
                 return repository.DALWarehouseHasEmployeeDelete(warehouseHasEmployee);
