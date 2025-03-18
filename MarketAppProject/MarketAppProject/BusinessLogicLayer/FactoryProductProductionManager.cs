@@ -24,8 +24,8 @@ namespace MarketAppProject.BusinessLogicLayer
             if (factoryProductProduction.factoryId<0
                 ||factoryProductProduction.productTemplateId<0
                 || factoryProductProduction.productQuantity<0
-                ||FieldCheck.checkDateTimeField(factoryProductProduction.productionDate)
-                ||FieldCheck.checkDateTimeField(factoryProductProduction.expirationDate)
+                ||!FieldCheck.checkDateTimeField(factoryProductProduction.productionDate)
+                ||!FieldCheck.checkDateTimeField(factoryProductProduction.expirationDate)
                 )
             {
                 return -1;
@@ -42,8 +42,8 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||factoryProductProduction.factoryId<0
                 ||factoryProductProduction.productTemplateId<0
                 || factoryProductProduction.productQuantity<0
-                ||FieldCheck.checkDateTimeField(factoryProductProduction.productionDate)
-                ||FieldCheck.checkDateTimeField(factoryProductProduction.expirationDate)
+                ||!FieldCheck.checkDateTimeField(factoryProductProduction.productionDate)
+                ||!FieldCheck.checkDateTimeField(factoryProductProduction.expirationDate)
                 )
             {
                 return -1;

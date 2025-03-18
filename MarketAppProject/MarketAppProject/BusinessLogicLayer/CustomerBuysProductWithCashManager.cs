@@ -24,7 +24,7 @@ namespace MarketAppProject.BusinessLogicLayer
             if (customerBuysProductWithCash.customerId<0
                 ||customerBuysProductWithCash.marketId<0
                 ||customerBuysProductWithCash.totalPrice<0
-                ||FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
+                ||!FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
                 ||customerBuysProductWithCash.saleCurrency<0
                 ||customerBuysProductWithCash.customerCurrency<0
                 )
@@ -60,7 +60,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||customerBuysProductWithCash.customerId<0
                 ||customerBuysProductWithCash.marketId<0
                 ||customerBuysProductWithCash.totalPrice<0
-                ||FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
+                ||!FieldCheck.checkDateTimeField(customerBuysProductWithCash.saleDate)
                 ||customerBuysProductWithCash.saleCurrency<0
                 ||customerBuysProductWithCash.customerCurrency<0
                 )

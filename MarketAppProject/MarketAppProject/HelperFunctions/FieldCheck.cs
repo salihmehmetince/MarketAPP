@@ -90,7 +90,7 @@ namespace MarketAppProject.HelperFunctions
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

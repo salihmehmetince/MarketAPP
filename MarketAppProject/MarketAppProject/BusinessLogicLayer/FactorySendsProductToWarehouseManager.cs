@@ -25,7 +25,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||factorySendsProductToWarehouse.warehouseId < 0
                 ||factorySendsProductToWarehouse.productTemplateId < 0
                 ||factorySendsProductToWarehouse.productQuantity < 0
-                ||FieldCheck.checkDateTimeField(factorySendsProductToWarehouse.sendDate)
+                ||!FieldCheck.checkDateTimeField(factorySendsProductToWarehouse.sendDate)
                 ||factorySendsProductToWarehouse.sendVehicle<0
                 )
             {
@@ -44,7 +44,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||factorySendsProductToWarehouse.warehouseId < 0
                 ||factorySendsProductToWarehouse.productTemplateId < 0
                 ||factorySendsProductToWarehouse.productQuantity < 0
-                ||FieldCheck.checkDateTimeField(factorySendsProductToWarehouse.sendDate)
+                ||!FieldCheck.checkDateTimeField(factorySendsProductToWarehouse.sendDate)
                 ||factorySendsProductToWarehouse.sendVehicle<0
                 )
             {

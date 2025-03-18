@@ -21,15 +21,15 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLEmployeeAdd(TblEmployee employee)
         {
-            if (FieldCheck.checkBasicStringField(employee.employeeIdentityNumber, 5, 15)
-                || FieldCheck.checkBasicStringField(employee.employeeName, 1, 40)
-                || FieldCheck.checkBasicStringField(employee.employeeSurname, 1, 40)
-                || FieldCheck.checkEmailField(employee.employeeEmail)
-                || FieldCheck.checkPhoneField(employee.employeeTelephoneNumber)
-                || FieldCheck.checkGenderField(employee.employeeGender)
-                || FieldCheck.checkDateTimeField(employee.employeeBirthDate)
-                || FieldCheck.checkAddressField(employee.employeeBirthPlace)
-                || FieldCheck.checkAddressField(employee.employeeAddress)
+            if (!FieldCheck.checkBasicStringField(employee.employeeIdentityNumber, 5, 15)
+                || !FieldCheck.checkBasicStringField(employee.employeeName, 1, 40)
+                || !FieldCheck.checkBasicStringField(employee.employeeSurname, 1, 40)
+                || !FieldCheck.checkEmailField(employee.employeeEmail)
+                || !FieldCheck.checkPhoneField(employee.employeeTelephoneNumber)
+                || !FieldCheck.checkGenderField(employee.employeeGender)
+                || !FieldCheck.checkDateTimeField(employee.employeeBirthDate)
+                || !FieldCheck.checkAddressField(employee.employeeBirthPlace)
+                || !FieldCheck.checkAddressField(employee.employeeAddress)
                 || employee.employeeRank < 0
                 || employee.employeePosition < 0
                 || employee.employeeDepartment < 0
@@ -55,15 +55,15 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLEmployeeUpdate(TblEmployee employee)
         {
             if (employee.employeeId<0
-                ||FieldCheck.checkBasicStringField(employee.employeeIdentityNumber,5,15)
-                ||FieldCheck.checkBasicStringField(employee.employeeName,1,40)
-                ||FieldCheck.checkBasicStringField(employee.employeeSurname,1,40)
-                ||FieldCheck.checkEmailField(employee.employeeEmail)
-                ||FieldCheck.checkPhoneField(employee.employeeTelephoneNumber)
-                ||FieldCheck.checkGenderField(employee.employeeGender)
-                ||FieldCheck.checkDateTimeField(employee.employeeBirthDate)
-                ||FieldCheck.checkAddressField(employee.employeeBirthPlace)
-                ||FieldCheck.checkAddressField(employee.employeeAddress)
+                ||!FieldCheck.checkBasicStringField(employee.employeeIdentityNumber,5,15)
+                ||!FieldCheck.checkBasicStringField(employee.employeeName,1,40)
+                ||!FieldCheck.checkBasicStringField(employee.employeeSurname,1,40)
+                ||!FieldCheck.checkEmailField(employee.employeeEmail)
+                ||!FieldCheck.checkPhoneField(employee.employeeTelephoneNumber)
+                ||!FieldCheck.checkGenderField(employee.employeeGender)
+                ||!FieldCheck.checkDateTimeField(employee.employeeBirthDate)
+                ||!FieldCheck.checkAddressField(employee.employeeBirthPlace)
+                ||!FieldCheck.checkAddressField(employee.employeeAddress)
                 ||employee.employeeRank<0
                 ||employee.employeePosition<0
                 ||employee.employeeDepartment<0

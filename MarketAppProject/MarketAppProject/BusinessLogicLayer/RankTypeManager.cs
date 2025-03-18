@@ -21,7 +21,7 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLRankTypeAdd(TblRankType rankType)
         {
-            if (FieldCheck.checkBasicStringField(rankType.rankTypeName, 1, 40)
+            if (!FieldCheck.checkBasicStringField(rankType.rankTypeName, 1, 40)
                 ||rankType.rankTypeSalaryValue<0
                 )
             {
@@ -36,7 +36,7 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLRankTypeUpdate(TblRankType rankType)
         {
             if (rankType.rankTypeId<0
-                ||FieldCheck.checkBasicStringField(rankType.rankTypeName, 1, 40)
+                ||!FieldCheck.checkBasicStringField(rankType.rankTypeName, 1, 40)
                 ||rankType.rankTypeSalaryValue<0
                 )
             {

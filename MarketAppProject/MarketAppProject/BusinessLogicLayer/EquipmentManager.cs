@@ -21,7 +21,7 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLEquipmentAdd(TblEquipment equipment)
         {
-            if (FieldCheck.checkBasicStringField(equipment.equipmentName, 1, 40)
+            if (!FieldCheck.checkBasicStringField(equipment.equipmentName, 1, 40)
                 )
             {
                 return -1;
@@ -35,7 +35,7 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLEquipmentUpdate(TblEquipment equipment)
         {
             if (equipment.equipmentId<0
-                ||FieldCheck.checkBasicStringField(equipment.equipmentName, 1, 40)
+                ||!FieldCheck.checkBasicStringField(equipment.equipmentName, 1, 40)
                 )
             {
                 return -1;

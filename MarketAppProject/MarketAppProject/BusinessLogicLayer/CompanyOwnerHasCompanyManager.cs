@@ -25,8 +25,8 @@ namespace MarketAppProject.BusinessLogicLayer
                 || companyOwerHasCompany.company<1
                 || companyOwerHasCompany.companyOwnerPercent<0
                 || companyOwerHasCompany.companyOwnerPercent>100
-                || FieldCheck.checkDateTimeField(companyOwerHasCompany.startDate)
-                || FieldCheck.checkDateTimeField(companyOwerHasCompany.endDate)
+                || !FieldCheck.checkDateTimeField(companyOwerHasCompany.startDate)
+                || !FieldCheck.checkDateTimeField(companyOwerHasCompany.endDate)
                 )
             {
                 return -1;
@@ -44,8 +44,8 @@ namespace MarketAppProject.BusinessLogicLayer
                 || companyOwerHasCompany.company<1
                 || companyOwerHasCompany.companyOwnerPercent<0
                 || companyOwerHasCompany.companyOwnerPercent>100
-                || FieldCheck.checkDateTimeField(companyOwerHasCompany.startDate)
-                || FieldCheck.checkDateTimeField(companyOwerHasCompany.endDate)
+                || !FieldCheck.checkDateTimeField(companyOwerHasCompany.startDate)
+                || !FieldCheck.checkDateTimeField(companyOwerHasCompany.endDate)
                 )
             {
                 return -1;

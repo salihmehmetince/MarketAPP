@@ -21,7 +21,7 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLDepartmentTypeAdd(TblDepartmentType departmentType)
         {
-            if (FieldCheck.checkBasicStringField(departmentType.departmentTypeName,1,40)
+            if (!FieldCheck.checkBasicStringField(departmentType.departmentTypeName,1,40)
                 ||departmentType.departmentTypeSalaryFactor<0
                 )
             {
@@ -36,7 +36,7 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLDepartmentTypeUpdate(TblDepartmentType departmentType)
         {
             if (departmentType.departmentTypeId<0
-                ||FieldCheck.checkBasicStringField(departmentType.departmentTypeName,1,40)
+                ||!FieldCheck.checkBasicStringField(departmentType.departmentTypeName,1,40)
                 ||departmentType.departmentTypeSalaryFactor<0
                 )
             {

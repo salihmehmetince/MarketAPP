@@ -20,7 +20,7 @@ namespace MarketAppProject.DataAccessLayer
 
         public int BLProfessionAdd(TblProfession profession)
         {
-            if (FieldCheck.checkBasicStringField(profession.professionName, 1, 40)
+            if (!FieldCheck.checkBasicStringField(profession.professionName, 1, 40)
                 )
             {
                 return -1;
@@ -34,7 +34,7 @@ namespace MarketAppProject.DataAccessLayer
         public int BLProfessionUpdate(TblProfession profession)
         {
             if (profession.professionId<0
-                ||FieldCheck.checkBasicStringField(profession.professionName, 1, 40)
+                ||!FieldCheck.checkBasicStringField(profession.professionName, 1, 40)
                 )
             {
                 return -1;
@@ -48,6 +48,10 @@ namespace MarketAppProject.DataAccessLayer
 
         public int BLProfessionDelete(TblProfession profession)
         {
+            if (profession.professionId < 0)
+            {
+                return -1;
+            }
             using (var repository = new ProfessionRepository())
             {
                 return repository.DALProfessionDelete(profession);

@@ -24,7 +24,7 @@ namespace MarketAppProject.BusinessLogicLayer
             if (customerBuysProductWithCreditCard.customerId<0
                 ||customerBuysProductWithCreditCard.marketId<0
                 ||customerBuysProductWithCreditCard.totalPrice<0
-                ||FieldCheck.checkDateTimeField(customerBuysProductWithCreditCard.saleDate)
+                ||!FieldCheck.checkDateTimeField(customerBuysProductWithCreditCard.saleDate)
                 ||customerBuysProductWithCreditCard.saleCurrency<0
                 ||string.IsNullOrWhiteSpace(customerBuysProductWithCreditCard.cardNameFirstAndLastTwocharacters)
                 ||customerBuysProductWithCreditCard.cardNameFirstAndLastTwocharacters.Length<3
@@ -47,7 +47,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||customerBuysProductWithCreditCard.customerId<0
                 ||customerBuysProductWithCreditCard.marketId<0
                 ||customerBuysProductWithCreditCard.totalPrice<0
-                ||FieldCheck.checkDateTimeField(customerBuysProductWithCreditCard.saleDate)
+                ||!FieldCheck.checkDateTimeField(customerBuysProductWithCreditCard.saleDate)
                 ||customerBuysProductWithCreditCard.saleCurrency<0
                 ||string.IsNullOrWhiteSpace(customerBuysProductWithCreditCard.cardNameFirstAndLastTwocharacters)
                 ||customerBuysProductWithCreditCard.cardNameFirstAndLastTwocharacters.Length<3

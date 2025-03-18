@@ -27,10 +27,10 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||string.IsNullOrWhiteSpace(customer.customerSurname)
                 ||customer.customerSurname.Length<1
                 ||customer.customerSurname.Length>40
-                ||FieldCheck.checkEmailField(customer.customerEmail)
-                ||FieldCheck.checkPhoneField(customer.customerTelephoneNumber)
-                ||FieldCheck.checkGenderField(customer.customerGender)
-                ||FieldCheck.checkAddressField(customer.customerAddress)
+                ||!FieldCheck.checkEmailField(customer.customerEmail)
+                ||!FieldCheck.checkPhoneField(customer.customerTelephoneNumber)
+                ||!FieldCheck.checkGenderField(customer.customerGender)
+                ||!FieldCheck.checkAddressField(customer.customerAddress)
                 )
             {
                 return -1;
@@ -50,10 +50,10 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||string.IsNullOrWhiteSpace(customer.customerSurname)
                 ||customer.customerSurname.Length<1
                 ||customer.customerSurname.Length>40
-                ||FieldCheck.checkEmailField(customer.customerEmail)
-                ||FieldCheck.checkPhoneField(customer.customerTelephoneNumber)
-                ||FieldCheck.checkGenderField(customer.customerGender)
-                ||FieldCheck.checkAddressField(customer.customerAddress)
+                ||!FieldCheck.checkEmailField(customer.customerEmail)
+                ||!FieldCheck.checkPhoneField(customer.customerTelephoneNumber)
+                ||!FieldCheck.checkGenderField(customer.customerGender)
+                ||!FieldCheck.checkAddressField(customer.customerAddress)
                 )
             {
                 return -1;

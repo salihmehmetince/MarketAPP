@@ -21,12 +21,12 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLFactoryAdd(TblFactory factory)
         {
-            if (FieldCheck.checkBasicStringField(factory.factoryName, 1, 40)
-                || FieldCheck.checkAddressField(factory.factoryAddress)
-                || FieldCheck.checkPhoneField(factory.factoryTelephoneNumber)
-                || FieldCheck.checkEmailField(factory.factoryEmail)
+            if (!FieldCheck.checkBasicStringField(factory.factoryName, 1, 40)
+                || !FieldCheck.checkAddressField(factory.factoryAddress)
+                || !FieldCheck.checkPhoneField(factory.factoryTelephoneNumber)
+                || !FieldCheck.checkEmailField(factory.factoryEmail)
                 || factory.factoryCountry<0
-                || FieldCheck.checkBasicStringField(factory.factoryProductionCode,3,3)
+                || !FieldCheck.checkBasicStringField(factory.factoryProductionCode,3,3)
                 )
             {
                 return -1;
@@ -40,12 +40,12 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLFactoryUpdate(TblFactory factory)
         {
             if (factory.factoryId<0
-                ||FieldCheck.checkBasicStringField(factory.factoryName, 1, 40)
-                || FieldCheck.checkAddressField(factory.factoryAddress)
-                || FieldCheck.checkPhoneField(factory.factoryTelephoneNumber)
-                || FieldCheck.checkEmailField(factory.factoryEmail)
+                ||!FieldCheck.checkBasicStringField(factory.factoryName, 1, 40)
+                || !FieldCheck.checkAddressField(factory.factoryAddress)
+                || !FieldCheck.checkPhoneField(factory.factoryTelephoneNumber)
+                || !FieldCheck.checkEmailField(factory.factoryEmail)
                 || factory.factoryCountry<0
-                || FieldCheck.checkBasicStringField(factory.factoryProductionCode,3,3)
+                || !FieldCheck.checkBasicStringField(factory.factoryProductionCode,3,3)
                 )
             {
                 return -1;

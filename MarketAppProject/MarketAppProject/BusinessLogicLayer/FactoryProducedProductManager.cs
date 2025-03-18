@@ -23,8 +23,8 @@ namespace MarketAppProject.BusinessLogicLayer
         {
             if (factoryProducedProduct.factoryId<0
                 || factoryProducedProduct.productTemplateId<0
-                || FieldCheck.checkDateTimeField(factoryProducedProduct.productiınDate)
-                || FieldCheck.checkBasicStringField(factoryProducedProduct.barkod,13,13)
+                || !FieldCheck.checkDateTimeField(factoryProducedProduct.productiınDate)
+                || !FieldCheck.checkBasicStringField(factoryProducedProduct.barkod,13,13)
                 )
             {
                 return -1;
@@ -40,8 +40,8 @@ namespace MarketAppProject.BusinessLogicLayer
             if (factoryProducedProduct.factoryProducedProductId<0
                 ||factoryProducedProduct.factoryId<0
                 || factoryProducedProduct.productTemplateId<0
-                || FieldCheck.checkDateTimeField(factoryProducedProduct.productiınDate)
-                || FieldCheck.checkBasicStringField(factoryProducedProduct.barkod,13,13)
+                || !FieldCheck.checkDateTimeField(factoryProducedProduct.productiınDate)
+                || !FieldCheck.checkBasicStringField(factoryProducedProduct.barkod,13,13)
                 )
             {
                 return -1;

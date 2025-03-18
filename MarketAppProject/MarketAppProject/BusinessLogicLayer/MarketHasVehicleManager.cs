@@ -25,7 +25,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||marketHasVehicle.vehicleId<0
                 || marketHasVehicle.vehiclePurchaseMilAge < 0
                 ||marketHasVehicle.vehiclePurchasePrice < 0
-                ||FieldCheck.checkDateTimeField(marketHasVehicle.vehiclePurchaseDate)
+                ||!FieldCheck.checkDateTimeField(marketHasVehicle.vehiclePurchaseDate)
                 )
             {
                 return -1;
@@ -43,7 +43,7 @@ namespace MarketAppProject.BusinessLogicLayer
                 ||marketHasVehicle.vehicleId<0
                 || marketHasVehicle.vehiclePurchaseMilAge < 0
                 ||marketHasVehicle.vehiclePurchasePrice < 0
-                ||FieldCheck.checkDateTimeField(marketHasVehicle.vehiclePurchaseDate)
+                ||!FieldCheck.checkDateTimeField(marketHasVehicle.vehiclePurchaseDate)
                 )
             {
                 return -1;

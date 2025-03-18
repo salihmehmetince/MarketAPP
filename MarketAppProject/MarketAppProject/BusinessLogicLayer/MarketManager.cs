@@ -21,10 +21,10 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLMarketAdd(TblMarket market)
         {
-            if (FieldCheck.checkBasicStringField(market.marketName, 1, 40)
-                || FieldCheck.checkAddressField(market.marketAddress)
-                || FieldCheck.checkPhoneField(market.marketTelephoneNumber)
-                || FieldCheck.checkEmailField(market.marketEmail)
+            if (!FieldCheck.checkBasicStringField(market.marketName, 1, 40)
+                || !FieldCheck.checkAddressField(market.marketAddress)
+                || !FieldCheck.checkPhoneField(market.marketTelephoneNumber)
+                || !FieldCheck.checkEmailField(market.marketEmail)
                 )
             {
                 return -1;
@@ -38,10 +38,10 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLMarketUpdate(TblMarket market)
         {
             if (market.marketId<0
-                ||FieldCheck.checkBasicStringField(market.marketName, 1, 40)
-                || FieldCheck.checkAddressField(market.marketAddress)
-                || FieldCheck.checkPhoneField(market.marketTelephoneNumber)
-                || FieldCheck.checkEmailField(market.marketEmail)
+                ||!FieldCheck.checkBasicStringField(market.marketName, 1, 40)
+                || !FieldCheck.checkAddressField(market.marketAddress)
+                || !FieldCheck.checkPhoneField(market.marketTelephoneNumber)
+                || !FieldCheck.checkEmailField(market.marketEmail)
                 )
             {
                 return -1;

@@ -23,8 +23,8 @@ namespace MarketAppProject.BusinessLogicLayer
         {
             if (companyHasMarket.companyId < 1
                 || companyHasMarket.marketId < 1
-                || FieldCheck.checkDateTimeField(companyHasMarket.ownershipStartDate)
-                || FieldCheck.checkDateTimeField(companyHasMarket.ownershipEndDate)
+                || !FieldCheck.checkDateTimeField(companyHasMarket.ownershipStartDate)
+                || !FieldCheck.checkDateTimeField(companyHasMarket.ownershipEndDate)
                 )
             {
                 return -1;
@@ -41,8 +41,8 @@ namespace MarketAppProject.BusinessLogicLayer
             if (companyHasMarket.companyHasMarketId < 0
                 || companyHasMarket.companyId < 1
                 || companyHasMarket.marketId < 1
-                || FieldCheck.checkDateTimeField(companyHasMarket.ownershipStartDate)
-                || FieldCheck.checkDateTimeField(companyHasMarket.ownershipEndDate)
+                || !FieldCheck.checkDateTimeField(companyHasMarket.ownershipStartDate)
+                || !FieldCheck.checkDateTimeField(companyHasMarket.ownershipEndDate)
                 )
             {
                 return -1;

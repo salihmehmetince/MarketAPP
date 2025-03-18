@@ -23,8 +23,8 @@ namespace MarketAppProject.BusinessLogicLayer
         {
             if (marketHasEmployee.marketId<0
                 || marketHasEmployee.employeeId<0
-                || FieldCheck.checkDateTimeField(marketHasEmployee.startDate)
-                || FieldCheck.checkDateTimeField(marketHasEmployee.endDate)
+                || !FieldCheck.checkDateTimeField(marketHasEmployee.startDate)
+                || !FieldCheck.checkDateTimeField(marketHasEmployee.endDate)
                 )
             {
                 return -1;
@@ -40,8 +40,8 @@ namespace MarketAppProject.BusinessLogicLayer
             if (marketHasEmployee.marketHasEmployeeId<0
                 ||marketHasEmployee.marketId<0
                 || marketHasEmployee.employeeId<0
-                || FieldCheck.checkDateTimeField(marketHasEmployee.startDate)
-                || FieldCheck.checkDateTimeField(marketHasEmployee.endDate)
+                || !FieldCheck.checkDateTimeField(marketHasEmployee.startDate)
+                || !FieldCheck.checkDateTimeField(marketHasEmployee.endDate)
                 )
             {
                 return -1;

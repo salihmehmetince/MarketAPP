@@ -32,12 +32,12 @@ namespace MarketAppProject.BusinessLogicLayer
                 || string.IsNullOrWhiteSpace(companyOwner.companyOwnerSurname)
                 || companyOwner.companyOwnerSurname.Length < 2
                 || companyOwner.companyOwnerSurname.Length>40
-                || FieldCheck.checkEmailField(companyOwner.companyOwnerEmail)
-                || FieldCheck.checkPhoneField(companyOwner.companyOwnerTelephoneNumber)
-                || FieldCheck.checkGenderField(companyOwner.companyOwnerGender)
-                || FieldCheck.checkDateTimeField(companyOwner.companyOwnerBirthDate)
-                || FieldCheck.checkAddressField(companyOwner.companyOwnerAddress)
-                || FieldCheck.checkAddressField(companyOwner.companyOwnerBirthPlace)
+                || !FieldCheck.checkEmailField(companyOwner.companyOwnerEmail)
+                || !FieldCheck.checkPhoneField(companyOwner.companyOwnerTelephoneNumber)
+                || !FieldCheck.checkGenderField(companyOwner.companyOwnerGender)
+                || !FieldCheck.checkDateTimeField(companyOwner.companyOwnerBirthDate)
+                || !FieldCheck.checkAddressField(companyOwner.companyOwnerAddress)
+                || !FieldCheck.checkAddressField(companyOwner.companyOwnerBirthPlace)
                 || companyOwner.companyOwnerProfession<0
                 )
             {
@@ -64,12 +64,12 @@ namespace MarketAppProject.BusinessLogicLayer
                 || string.IsNullOrWhiteSpace(companyOwner.companyOwnerSurname)
                 || companyOwner.companyOwnerSurname.Length < 2
                 || companyOwner.companyOwnerSurname.Length > 40
-                || FieldCheck.checkEmailField(companyOwner.companyOwnerEmail)
-                || FieldCheck.checkPhoneField(companyOwner.companyOwnerTelephoneNumber)
-                || FieldCheck.checkGenderField(companyOwner.companyOwnerGender)
-                || FieldCheck.checkDateTimeField(companyOwner.companyOwnerBirthDate)
-                || FieldCheck.checkAddressField(companyOwner.companyOwnerAddress)
-                || FieldCheck.checkAddressField(companyOwner.companyOwnerBirthPlace)
+                || !FieldCheck.checkEmailField(companyOwner.companyOwnerEmail)
+                || !FieldCheck.checkPhoneField(companyOwner.companyOwnerTelephoneNumber)
+                || !FieldCheck.checkGenderField(companyOwner.companyOwnerGender)
+                || !FieldCheck.checkDateTimeField(companyOwner.companyOwnerBirthDate)
+                || !FieldCheck.checkAddressField(companyOwner.companyOwnerAddress)
+                || !FieldCheck.checkAddressField(companyOwner.companyOwnerBirthPlace)
                 || companyOwner.companyOwnerProfession < 0
                 )
             {

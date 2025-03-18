@@ -23,7 +23,7 @@ namespace MarketAppProject.BusinessLogicLayer
         {
             if (marketHasEquipment.marketId<0
                 ||marketHasEquipment.equipmentId<0
-                ||FieldCheck.checkDateTimeField(marketHasEquipment.purchaseDate)
+                ||!FieldCheck.checkDateTimeField(marketHasEquipment.purchaseDate)
                 ||marketHasEquipment.purchasePrice < 0
                 )
             {
@@ -40,7 +40,7 @@ namespace MarketAppProject.BusinessLogicLayer
             if (marketHasEquipment.marketHasEquipmentId<0
                 ||marketHasEquipment.marketId<0
                 ||marketHasEquipment.equipmentId<0
-                ||FieldCheck.checkDateTimeField(marketHasEquipment.purchaseDate)
+                ||!FieldCheck.checkDateTimeField(marketHasEquipment.purchaseDate)
                 ||marketHasEquipment.purchasePrice < 0
                 )
             {

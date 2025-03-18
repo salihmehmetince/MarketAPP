@@ -21,7 +21,7 @@ namespace MarketAppProject.BusinessLogicLayer
 
         public int BLVehicleBrandAdd(TblVehicleBrand vehicleBrand)
         {
-            if (FieldCheck.checkBasicStringField(vehicleBrand.vehicleBrandName, 1, 40)
+            if (!FieldCheck.checkBasicStringField(vehicleBrand.vehicleBrandName, 1, 40)
                 )
             {
                 return -1;
@@ -35,7 +35,7 @@ namespace MarketAppProject.BusinessLogicLayer
         public int BLVehicleBrandUpdate(TblVehicleBrand vehicleBrand)
         {
             if (vehicleBrand.vehicleBrandId<0
-                ||FieldCheck.checkBasicStringField(vehicleBrand.vehicleBrandName, 1, 40)
+                ||!FieldCheck.checkBasicStringField(vehicleBrand.vehicleBrandName, 1, 40)
                 )
             {
                 return -1;
