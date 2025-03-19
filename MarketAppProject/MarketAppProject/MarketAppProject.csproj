@@ -334,6 +334,18 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions\FieldCheck.cs" />
+    <Compile Include="PresentationLayer\AddCompanyTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddCompanyTypeForm.Designer.cs">
+      <DependentUpon>AddCompanyTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AddCountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddCountryForm.Designer.cs">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\AddProfessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,11 +364,23 @@
     <Compile Include="PresentationLayer\AdminTransactionsForm.Designer.cs">
       <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuyCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuyCompanyForm.Designer.cs">
+      <DependentUpon>CompanyOwnerBuyCompanyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerBuysCompanyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerBuysCompanyForm.Designer.cs">
       <DependentUpon>CompanyOwnerBuysCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerCompanyMakeTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerCompanyMakeTransactionForm.Designer.cs">
+      <DependentUpon>CompanyOwnerCompanyMakeTransactionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerHasCompaniesListForm.cs">
       <SubType>Form</SubType>
@@ -376,6 +400,30 @@
     <Compile Include="PresentationLayer\CompanyOwnerRegisterForm.Designer.cs">
       <DependentUpon>CompanyOwnerRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\CompanyTransactionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyTransactionsForm.Designer.cs">
+      <DependentUpon>CompanyTransactionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyTypeTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyTypeTransactionForm.Designer.cs">
+      <DependentUpon>CompanyTypeTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CountryTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CountryTransactionForm.Designer.cs">
+      <DependentUpon>CountryTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\DefineCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\DefineCompanyForm.Designer.cs">
+      <DependentUpon>DefineCompanyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +436,24 @@
     <Compile Include="PresentationLayer\ProfessionTransactionForm.Designer.cs">
       <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyOwnerHasCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyOwnerHasCompanyForm.Designer.cs">
+      <DependentUpon>UpdateCompanyOwnerHasCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyTypeForm.Designer.cs">
+      <DependentUpon>UpdateCompanyTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCountryForm.Designer.cs">
+      <DependentUpon>UpdateCountryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\UpdateProfessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +462,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\AddCompanyTypeForm.resx">
+      <DependentUpon>AddCompanyTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddCountryForm.resx">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddProfessionForm.resx">
       <DependentUpon>AddProfessionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,8 +477,14 @@
     <EmbeddedResource Include="PresentationLayer\AdminTransactionsForm.resx">
       <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuyCompanyForm.resx">
+      <DependentUpon>CompanyOwnerBuyCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuysCompanyForm.resx">
       <DependentUpon>CompanyOwnerBuysCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerCompanyMakeTransactionForm.resx">
+      <DependentUpon>CompanyOwnerCompanyMakeTransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\CompanyOwnerHasCompaniesListForm.resx">
       <DependentUpon>CompanyOwnerHasCompaniesListForm.cs</DependentUpon>
@@ -417,11 +495,32 @@
     <EmbeddedResource Include="PresentationLayer\CompanyOwnerRegisterForm.resx">
       <DependentUpon>CompanyOwnerRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyTransactionsForm.resx">
+      <DependentUpon>CompanyTransactionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyTypeTransactionForm.resx">
+      <DependentUpon>CompanyTypeTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CountryTransactionForm.resx">
+      <DependentUpon>CountryTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\DefineCompanyForm.resx">
+      <DependentUpon>DefineCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\ProfessionTransactionForm.resx">
       <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateCompanyOwnerHasCompanyForm.resx">
+      <DependentUpon>UpdateCompanyOwnerHasCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateCompanyTypeForm.resx">
+      <DependentUpon>UpdateCompanyTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateCountryForm.resx">
+      <DependentUpon>UpdateCountryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UpdateProfessionForm.resx">
       <DependentUpon>UpdateProfessionForm.cs</DependentUpon>
@@ -468,6 +567,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\building-3-fill.png" />
+    <None Include="Resources\store-line.png" />
+    <None Include="Resources\factory.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\home-assistant.png" />
+    <None Include="Resources\flag.png" />
     <None Include="Resources\account.png" />
     <None Include="Resources\account-key.png" />
     <None Include="Resources\account-tie.png" />

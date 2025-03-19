@@ -31,7 +31,7 @@ namespace MarketAppProject.PresentationLayer
             List<TblCompany> companyOwnerCompanies = (from company in companies
                                                       join cOHC in companyOwerHasCompanies
                                                       on company.companyId equals cOHC.company
-                                                      where cOHC.companyOwner == companyOwner.companyOwnerId
+                                                      where cOHC.companyOwner == companyOwner.companyOwnerId && cOHC.isActive == true
                                                       select company)
                                                       .ToList();
             CreateCompanyGroupBoxes(companyOwnerCompanies);
@@ -39,26 +39,36 @@ namespace MarketAppProject.PresentationLayer
 
         private void CreateCompanyGroupBoxes(List<TblCompany> companyOwnerCompanies)
         {
-            int startX = 500;
-            int startY = 50;
+            this.Controls.OfType<GroupBox>().ToList().ForEach(gb => this.Controls.Remove(gb));
+
+            int startX = 50;
+            int startY = 100;
             int groupBoxWidth = 200;
             int groupBoxHeight = 100;
-            int verticalSpacing = 20;
+            int horizontalSpacing = 20; // Sütunlar arası boşluk
+            int verticalSpacing = 20;   // Satırlar arası boşluk
+            int columns = 5; // Kaç sütun olacağını belirliyoruz
 
             for (int i = 0; i < companyOwnerCompanies.Count; i++)
             {
+                int index = i; // Local değişken oluştur
+
+                int column = index % columns; // 4 sütun olacak, her 4 öğede bir sıfırlanır
+                int row = index / columns;    // Her 4 öğede bir yeni satıra geçer
+
                 // GroupBox oluştur
                 GroupBox groupBox = new GroupBox();
-                groupBox.Text = "Şirket";
+                groupBox.Text = "Company";
                 groupBox.Size = new Size(groupBoxWidth, groupBoxHeight);
-                groupBox.Location = new Point(startX, startY + (i * (groupBoxHeight + verticalSpacing)));
+                groupBox.Location = new Point(startX + column * (groupBoxWidth + horizontalSpacing),
+                                              startY + row * (groupBoxHeight + verticalSpacing));
 
                 // Label oluştur (Şirket adı)
                 Label lblCompanyName = new Label();
-                lblCompanyName.Text = companyOwnerCompanies[i].companyName;
+                lblCompanyName.Text = companyOwnerCompanies[index].companyName;
                 lblCompanyName.AutoSize = true;
                 lblCompanyName.Location = new Point(10, 20);
-                lblCompanyName.Font = new Font("Arial", 10, FontStyle.Bold);
+                lblCompanyName.Font = new Font("Times New Roman", 10, FontStyle.Bold);
 
                 // Button oluştur (İşlem Yap)
                 Button btnTransaction = new Button();
@@ -68,10 +78,21 @@ namespace MarketAppProject.PresentationLayer
                 btnTransaction.BackColor = Color.LightBlue;
                 btnTransaction.FlatStyle = FlatStyle.Flat;
 
-                // Butona Click Event ekleme (Opsiyonel)
+                btnTransaction.Tag = companyOwnerCompanies[i]; // Butona şirket bilgisini ata
+
                 btnTransaction.Click += (s, e) =>
                 {
-                    MessageBox.Show($"Transaction started for {companyOwnerCompanies[i].companyName}", "Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Button clickedButton = (Button)s;
+                    TblCompany company = (TblCompany)clickedButton.Tag; // Butondan şirketi al
+
+                    CompanyOwnerHasCompanyManager companyOwnerHasCompanyManager = new CompanyOwnerHasCompanyManager();
+                    TblCompanyOwerHasCompany companyOwerHasCompany = companyOwnerHasCompanyManager
+                        .BLCompanyOwerHasCompanyList()
+                        .FirstOrDefault(c => c.company == company.companyId && c.companyOwner == companyOwner.companyOwnerId);
+
+                    CompanyOwnerCompanyMakeTransactionForm transactionForm = new CompanyOwnerCompanyMakeTransactionForm(
+                        companyOwner, company, companyOwerHasCompany);
+                    transactionForm.ShowDialog();
                 };
 
                 // GroupBox içine bileşenleri ekle
@@ -81,11 +102,24 @@ namespace MarketAppProject.PresentationLayer
                 // Form'a ekle
                 this.Controls.Add(groupBox);
             }
+
         }
 
         private void BtnBuyCompany_Click(object sender, EventArgs e)
         {
+            CompanyOwnerBuyCompanyForm form = new CompanyOwnerBuyCompanyForm(companyOwner);
+            form.ShowDialog();
+        }
 
+        private void BtnListCompanies_Click(object sender, EventArgs e)
+        {
+            CompanyOwnerHasCompaniesListForm_Load(sender, e);
+        }
+
+        private void BtnDefineCompany_Click(object sender, EventArgs e)
+        {
+            DefineCompanyForm defineCompanyForm=new DefineCompanyForm(companyOwner);
+            defineCompanyForm.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MarketAppProject.PresentationLayer
 {
-    partial class ProfessionTransactionForm
+    partial class CompanyTypeTransactionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,27 +33,29 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1234, 534);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1120, 433);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // ProfessionTransactionForm
+            // CompanyTypeTransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 534);
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(1120, 433);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimizeBox = false;
-            this.Name = "ProfessionTransactionForm";
+            this.MaximizeBox = false;
+            this.Name = "CompanyTypeTransactionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Profession Transaction Form";
-            this.Load += new System.EventHandler(this.ProfessionTransactionForm_Load);
+            this.Text = "Company Type Transactions Form";
+            this.Load += new System.EventHandler(this.CompanyTypeTransactionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

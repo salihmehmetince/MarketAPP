@@ -17,10 +17,10 @@ namespace MarketAppProject.EntityLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TblCompany()
         {
-            this.TblCompanyOwerHasCompany = new HashSet<TblCompanyOwerHasCompany>();
             this.TblCompanyHasFactory = new HashSet<TblCompanyHasFactory>();
             this.TblCompanyHasMarket = new HashSet<TblCompanyHasMarket>();
             this.TblCompanyHasWarehouse = new HashSet<TblCompanyHasWarehouse>();
+            this.TblCompanyOwerHasCompany = new HashSet<TblCompanyOwerHasCompany>();
         }
     
         public int companyId { get; set; }
@@ -28,8 +28,6 @@ namespace MarketAppProject.EntityLayer
         public int companyType { get; set; }
         public int companyCountry { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblCompanyOwerHasCompany> TblCompanyOwerHasCompany { get; set; }
         public virtual TblCountry TblCountry { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCompanyHasFactory> TblCompanyHasFactory { get; set; }
@@ -38,5 +36,7 @@ namespace MarketAppProject.EntityLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCompanyHasWarehouse> TblCompanyHasWarehouse { get; set; }
         public virtual TblCompanyType TblCompanyType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblCompanyOwerHasCompany> TblCompanyOwerHasCompany { get; set; }
     }
 }

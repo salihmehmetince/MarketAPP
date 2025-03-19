@@ -51,6 +51,7 @@
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(158, 27);
             this.TxtUsername.TabIndex = 11;
+            this.TxtUsername.Text = "test3@test.com";
             // 
             // BtnLogin
             // 
@@ -69,6 +70,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(158, 27);
             this.TxtPassword.TabIndex = 25;
+            this.TxtPassword.Text = "12345678";
             this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // label2

@@ -91,7 +91,7 @@
           <Property Name="CompanyOwerHasCompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="companyOwner" Type="int" Nullable="false" />
           <Property Name="company" Type="int" Nullable="false" />
-          <Property Name="companyOwnerPercent" Type="tinyint" Nullable="false" />
+          <Property Name="companyOwnerPercent" Type="float" Nullable="false" />
           <Property Name="startDate" Type="date" Nullable="false" />
           <Property Name="endDate" Type="date" />
           <Property Name="isActive" Type="bit" Nullable="false" />
@@ -1843,12 +1843,12 @@
           <Property Name="companyName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="companyType" Type="Int32" Nullable="false" />
           <Property Name="companyCountry" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TblCompanyOwerHasCompany" Relationship="Self.FK_company" FromRole="TblCompany" ToRole="TblCompanyOwerHasCompany" />
           <NavigationProperty Name="TblCountry" Relationship="Self.FK_companyCountry" FromRole="TblCompany" ToRole="TblCountry" />
           <NavigationProperty Name="TblCompanyHasFactory" Relationship="Self.FK_companyHFId" FromRole="TblCompany" ToRole="TblCompanyHasFactory" />
           <NavigationProperty Name="TblCompanyHasMarket" Relationship="Self.FK_companyHMId" FromRole="TblCompany" ToRole="TblCompanyHasMarket" />
           <NavigationProperty Name="TblCompanyHasWarehouse" Relationship="Self.FK_companyHWId" FromRole="TblCompany" ToRole="TblCompanyHasWarehouse" />
           <NavigationProperty Name="TblCompanyType" Relationship="Self.FK_companyType" FromRole="TblCompany" ToRole="TblCompanyType" />
+          <NavigationProperty Name="TblCompanyOwerHasCompany" Relationship="DBMarketAppModel.FK_company" FromRole="TblCompany" ToRole="TblCompanyOwerHasCompany" />
         </EntityType>
         <EntityType Name="TblCompanyHasFactory">
           <Key>
@@ -1889,20 +1889,6 @@
           <NavigationProperty Name="TblWarehouse" Relationship="Self.FK_warehouseHWId" FromRole="TblCompanyHasWarehouse" ToRole="TblWarehouse" />
           <Property Name="isActive" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="TblCompanyOwerHasCompany">
-          <Key>
-            <PropertyRef Name="CompanyOwerHasCompanyId" />
-          </Key>
-          <Property Name="CompanyOwerHasCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="companyOwner" Type="Int32" Nullable="false" />
-          <Property Name="company" Type="Int32" Nullable="false" />
-          <Property Name="companyOwnerPercent" Type="Byte" Nullable="false" />
-          <NavigationProperty Name="TblCompany" Relationship="Self.FK_company" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompany" />
-          <NavigationProperty Name="TblCompanyOwner" Relationship="Self.FK_companyOwner" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompanyOwner" />
-          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="endDate" Type="DateTime" Precision="0" />
-          <Property Name="isActive" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="TblCompanyOwner">
           <Key>
             <PropertyRef Name="companyOwnerId" />
@@ -1918,9 +1904,9 @@
           <Property Name="companyOwnerBirthPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="companyOwnerAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="companyOwnerProfession" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TblCompanyOwerHasCompany" Relationship="Self.FK_companyOwner" FromRole="TblCompanyOwner" ToRole="TblCompanyOwerHasCompany" />
           <NavigationProperty Name="TblProfession" Relationship="Self.FK_companyOwnerProfession" FromRole="TblCompanyOwner" ToRole="TblProfession" />
           <Property Name="companyOwnerPassword" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblCompanyOwerHasCompany" Relationship="DBMarketAppModel.FK_companyOwner" FromRole="TblCompanyOwner" ToRole="TblCompanyOwerHasCompany" />
         </EntityType>
         <EntityType Name="TblCompanyType">
           <Key>
@@ -2513,18 +2499,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_company">
-          <End Role="TblCompany" Type="Self.TblCompany" Multiplicity="1" />
-          <End Role="TblCompanyOwerHasCompany" Type="Self.TblCompanyOwerHasCompany" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblCompany">
-              <PropertyRef Name="companyId" />
-            </Principal>
-            <Dependent Role="TblCompanyOwerHasCompany">
-              <PropertyRef Name="company" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_companyCountry">
           <End Role="TblCountry" Type="Self.TblCountry" Multiplicity="1" />
           <End Role="TblCompany" Type="Self.TblCompany" Multiplicity="*" />
@@ -2618,18 +2592,6 @@
             </Principal>
             <Dependent Role="TblCompanyHasWarehouse">
               <PropertyRef Name="warehouseId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_companyOwner">
-          <End Role="TblCompanyOwner" Type="Self.TblCompanyOwner" Multiplicity="1" />
-          <End Role="TblCompanyOwerHasCompany" Type="Self.TblCompanyOwerHasCompany" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblCompanyOwner">
-              <PropertyRef Name="companyOwnerId" />
-            </Principal>
-            <Dependent Role="TblCompanyOwerHasCompany">
-              <PropertyRef Name="companyOwner" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3325,7 +3287,6 @@
           <EntitySet Name="TblCompanyHasFactory" EntityType="Self.TblCompanyHasFactory" />
           <EntitySet Name="TblCompanyHasMarket" EntityType="Self.TblCompanyHasMarket" />
           <EntitySet Name="TblCompanyHasWarehouse" EntityType="Self.TblCompanyHasWarehouse" />
-          <EntitySet Name="TblCompanyOwerHasCompany" EntityType="Self.TblCompanyOwerHasCompany" />
           <EntitySet Name="TblCompanyOwner" EntityType="Self.TblCompanyOwner" />
           <EntitySet Name="TblCompanyType" EntityType="Self.TblCompanyType" />
           <EntitySet Name="TblCountry" EntityType="Self.TblCountry" />
@@ -3388,10 +3349,6 @@
             <End Role="TblProductTemplate" EntitySet="TblProductTemplate" />
             <End Role="TblCashSaleDetail" EntitySet="TblCashSaleDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_company" Association="Self.FK_company">
-            <End Role="TblCompany" EntitySet="TblCompany" />
-            <End Role="TblCompanyOwerHasCompany" EntitySet="TblCompanyOwerHasCompany" />
-          </AssociationSet>
           <AssociationSet Name="FK_companyCountry" Association="Self.FK_companyCountry">
             <End Role="TblCountry" EntitySet="TblCountry" />
             <End Role="TblCompany" EntitySet="TblCompany" />
@@ -3423,10 +3380,6 @@
           <AssociationSet Name="FK_warehouseHWId" Association="Self.FK_warehouseHWId">
             <End Role="TblWarehouse" EntitySet="TblWarehouse" />
             <End Role="TblCompanyHasWarehouse" EntitySet="TblCompanyHasWarehouse" />
-          </AssociationSet>
-          <AssociationSet Name="FK_companyOwner" Association="Self.FK_companyOwner">
-            <End Role="TblCompanyOwner" EntitySet="TblCompanyOwner" />
-            <End Role="TblCompanyOwerHasCompany" EntitySet="TblCompanyOwerHasCompany" />
           </AssociationSet>
           <AssociationSet Name="FK_companyOwnerProfession" Association="Self.FK_companyOwnerProfession">
             <End Role="TblProfession" EntitySet="TblProfession" />
@@ -3696,6 +3649,15 @@
             <End Role="TblProductTemplate" EntitySet="TblProductTemplate" />
             <End Role="TblFactoryProductProduction" EntitySet="TblFactoryProductProduction" />
           </AssociationSet>
+          <EntitySet Name="TblCompanyOwerHasCompany" EntityType="DBMarketAppModel.TblCompanyOwerHasCompany" />
+          <AssociationSet Name="FK_company" Association="DBMarketAppModel.FK_company">
+            <End Role="TblCompany" EntitySet="TblCompany" />
+            <End Role="TblCompanyOwerHasCompany" EntitySet="TblCompanyOwerHasCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_companyOwner" Association="DBMarketAppModel.FK_companyOwner">
+            <End Role="TblCompanyOwner" EntitySet="TblCompanyOwner" />
+            <End Role="TblCompanyOwerHasCompany" EntitySet="TblCompanyOwerHasCompany" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -3752,6 +3714,44 @@
             </Principal>
             <Dependent Role="TblFactoryProductProduction">
               <PropertyRef Name="productTemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblCompanyOwerHasCompany">
+          <Key>
+            <PropertyRef Name="CompanyOwerHasCompanyId" />
+          </Key>
+          <Property Name="CompanyOwerHasCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="companyOwner" Type="Int32" Nullable="false" />
+          <Property Name="company" Type="Int32" Nullable="false" />
+          <Property Name="companyOwnerPercent" Type="Double" Nullable="false" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TblCompany" Relationship="DBMarketAppModel.FK_company" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompany" />
+          <NavigationProperty Name="TblCompanyOwner" Relationship="DBMarketAppModel.FK_companyOwner" FromRole="TblCompanyOwerHasCompany" ToRole="TblCompanyOwner" />
+        </EntityType>
+        <Association Name="FK_company">
+          <End Type="DBMarketAppModel.TblCompany" Role="TblCompany" Multiplicity="1" />
+          <End Type="DBMarketAppModel.TblCompanyOwerHasCompany" Role="TblCompanyOwerHasCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompany">
+              <PropertyRef Name="companyId" />
+            </Principal>
+            <Dependent Role="TblCompanyOwerHasCompany">
+              <PropertyRef Name="company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_companyOwner">
+          <End Type="DBMarketAppModel.TblCompanyOwner" Role="TblCompanyOwner" Multiplicity="1" />
+          <End Type="DBMarketAppModel.TblCompanyOwerHasCompany" Role="TblCompanyOwerHasCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCompanyOwner">
+              <PropertyRef Name="companyOwnerId" />
+            </Principal>
+            <Dependent Role="TblCompanyOwerHasCompany">
+              <PropertyRef Name="companyOwner" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3834,19 +3834,6 @@
                 <ScalarProperty Name="warehouseId" ColumnName="warehouseId" />
                 <ScalarProperty Name="ownershipStartDate" ColumnName="ownershipStartDate" />
                 <ScalarProperty Name="ownershipEndDate" ColumnName="ownershipEndDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TblCompanyOwerHasCompany">
-            <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyOwerHasCompany">
-              <MappingFragment StoreEntitySet="TblCompanyOwerHasCompany">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="endDate" ColumnName="endDate" />
-                <ScalarProperty Name="startDate" ColumnName="startDate" />
-                <ScalarProperty Name="CompanyOwerHasCompanyId" ColumnName="CompanyOwerHasCompanyId" />
-                <ScalarProperty Name="companyOwner" ColumnName="companyOwner" />
-                <ScalarProperty Name="company" ColumnName="company" />
-                <ScalarProperty Name="companyOwnerPercent" ColumnName="companyOwnerPercent" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4359,6 +4346,19 @@
                 <ScalarProperty Name="productTemplateId" ColumnName="productTemplateId" />
                 <ScalarProperty Name="factoryId" ColumnName="factoryId" />
                 <ScalarProperty Name="factoryProductProductionId" ColumnName="factoryProductProductionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCompanyOwerHasCompany">
+            <EntityTypeMapping TypeName="DBMarketAppModel.TblCompanyOwerHasCompany">
+              <MappingFragment StoreEntitySet="TblCompanyOwerHasCompany">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="companyOwnerPercent" ColumnName="companyOwnerPercent" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="companyOwner" ColumnName="companyOwner" />
+                <ScalarProperty Name="CompanyOwerHasCompanyId" ColumnName="CompanyOwerHasCompanyId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

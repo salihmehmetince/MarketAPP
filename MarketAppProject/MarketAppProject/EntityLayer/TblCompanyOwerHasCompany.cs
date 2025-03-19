@@ -17,7 +17,7 @@ namespace MarketAppProject.EntityLayer
         public int CompanyOwerHasCompanyId { get; set; }
         public int companyOwner { get; set; }
         public int company { get; set; }
-        public byte companyOwnerPercent { get; set; }
+        public double companyOwnerPercent { get; set; }
         public System.DateTime startDate { get; set; }
         public Nullable<System.DateTime> endDate { get; set; }
         public bool isActive { get; set; }

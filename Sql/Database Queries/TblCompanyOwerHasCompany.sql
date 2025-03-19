@@ -2,7 +2,7 @@ create table TblCompanyOwerHasCompany(
 	CompanyOwerHasCompanyId int not null identity(1,1),
 	companyOwner int not null,
 	company int not null,
-	companyOwnerPercent tinyint not null,
+	companyOwnerPercent float not null,
 	startDate date not null,
 	endDate date null,
 	isActive bit not null,

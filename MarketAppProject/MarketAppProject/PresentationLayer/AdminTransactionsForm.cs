@@ -22,5 +22,17 @@ namespace MarketAppProject.PresentationLayer
             ProfessionTransactionForm professionTransactionForm = new ProfessionTransactionForm();  
             professionTransactionForm.ShowDialog();
         }
+
+        private void BtnCountry_Click(object sender, EventArgs e)
+        {
+            CountryTransactionForm countryTransactionForm = new CountryTransactionForm();
+            countryTransactionForm.ShowDialog();
+        }
+
+        private void BtnCompanyType_Click(object sender, EventArgs e)
+        {
+            CompanyTypeTransactionForm companyTypeTransactionForm = new CompanyTypeTransactionForm();
+            companyTypeTransactionForm.ShowDialog();
+        }
     }
 }

@@ -63,6 +63,16 @@ namespace MarketAppProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addIcon {
+            get {
+                object obj = ResourceManager.GetObject("addIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adminIcon {
             get {
                 object obj = ResourceManager.GetObject("adminIcon", resourceCulture);
@@ -93,6 +103,56 @@ namespace MarketAppProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap companyTypeIcon {
+            get {
+                object obj = ResourceManager.GetObject("companyTypeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap countryIcon {
+            get {
+                object obj = ResourceManager.GetObject("countryIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deleteIcon {
+            get {
+                object obj = ResourceManager.GetObject("deleteIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap factoryIcon {
+            get {
+                object obj = ResourceManager.GetObject("factoryIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marketIcon {
+            get {
+                object obj = ResourceManager.GetObject("marketIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap professionIcon {
             get {
                 object obj = ResourceManager.GetObject("professionIcon", resourceCulture);
@@ -103,9 +163,29 @@ namespace MarketAppProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap updateIcon {
+            get {
+                object obj = ResourceManager.GetObject("updateIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap userIcon {
             get {
                 object obj = ResourceManager.GetObject("userIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouseIcon {
+            get {
+                object obj = ResourceManager.GetObject("warehouseIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

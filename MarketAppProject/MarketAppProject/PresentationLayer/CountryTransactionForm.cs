@@ -1,4 +1,5 @@
-﻿using MarketAppProject.DataAccessLayer;
+﻿using MarketAppProject.BusinessLogicLayer;
+using MarketAppProject.DataAccessLayer;
 using MarketAppProject.EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ using System.Windows.Forms;
 
 namespace MarketAppProject.PresentationLayer
 {
-    public partial class ProfessionTransactionForm : Form
+    public partial class CountryTransactionForm : Form
     {
         private Panel topPanel;
         private Button btnAdd;
         private Button btnList;
-        public ProfessionTransactionForm()
+        public CountryTransactionForm()
         {
             InitializeComponent();
 
@@ -35,7 +36,7 @@ namespace MarketAppProject.PresentationLayer
                 Text = "Add",
                 Size = new Size(120, 40),
                 Location = new Point(10, 10),
-                BackColor = Color.SeaGreen,
+                BackColor = Color.DodgerBlue,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
             };
@@ -48,7 +49,7 @@ namespace MarketAppProject.PresentationLayer
                 Text = "List",
                 Size = new Size(120, 40),
                 Location = new Point(140, 10),
-                BackColor = Color.SteelBlue,
+                BackColor = Color.Red,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
             };
@@ -60,29 +61,29 @@ namespace MarketAppProject.PresentationLayer
             this.Controls.Add(topPanel);
         }
 
-        private void ProfessionTransactionForm_Load(object sender, EventArgs e)
+        private void CountryTransactionForm_Load(object sender, EventArgs e)
         {
-            LoadProfessions();
+            LoadCountryies();
         }
 
-        private void LoadProfessions()
+        private void LoadCountryies()
         {
             flowLayoutPanel1.Controls.Clear();
-            ProfessionManager professionManager = new ProfessionManager();
-            List<TblProfession> professions = professionManager.BLProfessionList();
+            CountryManager countryManager = new CountryManager();
+            List<TblCountry> countries = countryManager.BLCountryList();
 
-            if (professions == null || professions.Count == 0)
+            if (countries == null || countries.Count == 0)
             {
                 MessageBox.Show("There aren't any records", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            foreach (TblProfession profession in professions)
+            foreach (TblCountry country in countries) 
             {
                 // Grup Kutusu (Kutu Şekilli Profesyonel Alan)
                 GroupBox groupBox = new GroupBox
                 {
-                    Text = profession.professionName,
+                    Text = country.countryName,
                     Width = 280,
                     Height = 120,
                     BackColor = Color.LightGray,
@@ -90,10 +91,17 @@ namespace MarketAppProject.PresentationLayer
                     Padding = new Padding(10)
                 };
 
-                Label lblProfession = new Label
+                Label LblCountryName = new Label
                 {
-                    Text = $"Profession: {profession.professionName}",
+                    Text = $"Country Name: {country.countryName}",
                     Location = new Point(10, 20),
+                    AutoSize = true
+                };
+
+                Label LblCountryProductionCode = new Label
+                {
+                    Text = $"Country Production Code: {country.countryProductionCode}",
+                    Location = new Point(10, 40),
                     AutoSize = true
                 };
 
@@ -103,10 +111,10 @@ namespace MarketAppProject.PresentationLayer
                     Text = "Update",
                     Size = new Size(85, 35),
                     Location = new Point(10, 60),
-                    BackColor = Color.Orange,
+                    BackColor = Color.Purple,
                     ForeColor = Color.White,
                     FlatStyle = FlatStyle.Flat,
-                    Tag = profession
+                    Tag = country
                 };
                 btnUpdate.FlatAppearance.BorderSize = 0;
                 btnUpdate.Click += BtnUpdate_Click;
@@ -117,15 +125,16 @@ namespace MarketAppProject.PresentationLayer
                     Text = "Delete",
                     Size = new Size(85, 35),
                     Location = new Point(100, 60),
-                    BackColor = Color.Crimson,
+                    BackColor = Color.Black,
                     ForeColor = Color.White,
                     FlatStyle = FlatStyle.Flat,
-                    Tag = profession
+                    Tag = country
                 };
                 btnDelete.FlatAppearance.BorderSize = 0;
                 btnDelete.Click += BtnDelete_Click;
 
-                groupBox.Controls.Add(lblProfession);
+                groupBox.Controls.Add(LblCountryName);
+                groupBox.Controls.Add(LblCountryProductionCode);
                 groupBox.Controls.Add(btnUpdate);
                 groupBox.Controls.Add(btnDelete);
 
@@ -135,26 +144,26 @@ namespace MarketAppProject.PresentationLayer
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (sender is Button btn && btn.Tag is TblProfession profession)
+            if (sender is Button btn && btn.Tag is TblCountry country)
             {
-                UpdateProfessionForm updateProfessionForm = new UpdateProfessionForm(profession);
-                updateProfessionForm.ShowDialog();
+                UpdateCountryForm updateCountryForm = new UpdateCountryForm(country);
+                updateCountryForm.ShowDialog();
             }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (sender is Button btn && btn.Tag is TblProfession profession)
+            if (sender is Button btn && btn.Tag is TblCountry country)
             {
-                DialogResult result = MessageBox.Show($"Do you want to delete {profession.professionName}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show($"Do you want to delete {country.countryName}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    ProfessionManager professionManager = new ProfessionManager();
-                    int result2 = professionManager.BLProfessionDelete(profession);
+                    CountryManager countryManager = new CountryManager();
+                    int result2 = countryManager.BLCountryDelete(country);
                     if (result2 > 0)
                     {
-                        MessageBox.Show($"{profession.professionName} deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadProfessions();
+                        MessageBox.Show($"{country.countryName} deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadCountryies();
                     }
                     else
                     {
@@ -166,14 +175,13 @@ namespace MarketAppProject.PresentationLayer
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            AddProfessionForm form = new AddProfessionForm();
-            form.ShowDialog();
+            AddCountryForm addCountryForm = new AddCountryForm();
+            addCountryForm.ShowDialog();
         }
 
         private void BtnList_Click(object sender, EventArgs e)
         {
-            LoadProfessions();
+            LoadCountryies();
         }
     }
 }
-
