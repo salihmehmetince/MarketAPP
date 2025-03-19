@@ -334,8 +334,98 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions\FieldCheck.cs" />
+    <Compile Include="PresentationLayer\AddProfessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddProfessionForm.Designer.cs">
+      <DependentUpon>AddProfessionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AdminLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AdminLoginForm.Designer.cs">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AdminTransactionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AdminTransactionsForm.Designer.cs">
+      <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuysCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuysCompanyForm.Designer.cs">
+      <DependentUpon>CompanyOwnerBuysCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerHasCompaniesListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerHasCompaniesListForm.Designer.cs">
+      <DependentUpon>CompanyOwnerHasCompaniesListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerLoginForm.Designer.cs">
+      <DependentUpon>CompanyOwnerLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerRegisterForm.Designer.cs">
+      <DependentUpon>CompanyOwnerRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ProfessionTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ProfessionTransactionForm.Designer.cs">
+      <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateProfessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateProfessionForm.Designer.cs">
+      <DependentUpon>UpdateProfessionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\AddProfessionForm.resx">
+      <DependentUpon>AddProfessionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AdminLoginForm.resx">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AdminTransactionsForm.resx">
+      <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuysCompanyForm.resx">
+      <DependentUpon>CompanyOwnerBuysCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerHasCompaniesListForm.resx">
+      <DependentUpon>CompanyOwnerHasCompaniesListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerLoginForm.resx">
+      <DependentUpon>CompanyOwnerLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerRegisterForm.resx">
+      <DependentUpon>CompanyOwnerRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ProfessionTransactionForm.resx">
+      <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateProfessionForm.resx">
+      <DependentUpon>UpdateProfessionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -378,6 +468,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\account.png" />
+    <None Include="Resources\account-key.png" />
+    <None Include="Resources\account-tie.png" />
     <None Include="Resources\school.png" />
     <None Include="Resources\AppIcon.ico" />
     <None Include="Resources\user-line.png" />
@@ -387,8 +480,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PresentationLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
