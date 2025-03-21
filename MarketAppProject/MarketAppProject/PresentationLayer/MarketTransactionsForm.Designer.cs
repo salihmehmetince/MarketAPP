@@ -1,6 +1,6 @@
 ﻿namespace MarketAppProject.PresentationLayer
 {
-    partial class CompanyTransactionsForm
+    partial class MarketTransactionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,35 +33,36 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(947, 572);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(900, 534);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // CompanyTransactionsForm
+            // MarketTransactionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(947, 572);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(900, 534);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "CompanyTransactionsForm";
+            this.Name = "MarketTransactionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Company Transactions Form";
-            this.Load += new System.EventHandler(this.CompanyTransactionsForm_Load);
+            this.Text = "Market Transactions Form";
+            this.Load += new System.EventHandler(this.MarketTransactionsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

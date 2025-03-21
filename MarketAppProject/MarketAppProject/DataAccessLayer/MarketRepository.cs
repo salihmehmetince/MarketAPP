@@ -81,7 +81,7 @@ namespace MarketAppProject.DataAccessLayer
                 TblMarket existingMarket = dBMarketAppEntitiesContext.TblMarket.Find(market.marketId);
                 if (existingMarket != null)
                 {
-                    dBMarketAppEntitiesContext.TblMarket.Remove(market);
+                    dBMarketAppEntitiesContext.TblMarket.Remove(existingMarket);
                     dBMarketAppEntitiesContext.SaveChanges();
                     return existingMarket.marketId;
                 }

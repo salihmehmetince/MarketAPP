@@ -34,5 +34,28 @@ namespace MarketAppProject.PresentationLayer
             CompanyTypeTransactionForm companyTypeTransactionForm = new CompanyTypeTransactionForm();
             companyTypeTransactionForm.ShowDialog();
         }
+
+        private void BtnCompany_Click(object sender, EventArgs e)
+        {
+            CompanyTransactionsForm companyTransactionsForm = new CompanyTransactionsForm();
+            companyTransactionsForm.ShowDialog();
+        }
+
+        private void BtnFactory_Click(object sender, EventArgs e)
+        {
+            FactoryTransactionForm factoryTransactionForm = new FactoryTransactionForm();
+            factoryTransactionForm.ShowDialog();
+        }
+
+        private void BtnMarket_Click(object sender, EventArgs e)
+        {
+            MarketTransactionsForm marketTransactionsForm = new MarketTransactionsForm();
+            marketTransactionsForm.ShowDialog();
+        }
+
+        private void BtnWarehouse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

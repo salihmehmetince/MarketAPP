@@ -9,7 +9,7 @@ create table TblFactorySendsProductToMarket(
 	constraint PK_factorySendsProductToMarketId primary key(factorySendsProductToMarketId),
 	constraint FK_factoryIdFactorySendsProductToMarket foreign key(factoryId) references TblFactory(factoryId),
 	constraint FK_marketIdFactorySendsProductToMarket foreign key(marketId) references TblMarket(marketId),
-	constraint FK_productTemplateIdFactorySendsProductToMarket foreign key(productTemplateId) references TblProductTemplate(productTemplateId),
+	constraint FK_productTemplateIdFactorySendsProductToMarket foreign key(productTemplateId) references TblProductTemplate(productTemplateId), 
 	constraint FK_sendVehicleFactorySendsProductToMarket foreign key(sendVehicle) references TblVehicle(vehicleId)
 
 	);

@@ -99,7 +99,7 @@ namespace MarketAppProject.DataAccessLayer
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            dBMarketAppEntitiesContext.Dispose();
         }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="BusinessLogicLayer\WareHouseHasEquipmentManager.cs" />
     <Compile Include="BusinessLogicLayer\WarehouseHasVehicleManager.cs" />
     <Compile Include="BusinessLogicLayer\WarehouseInventoryManager.cs" />
+    <Compile Include="BusinessLogicLayer\WarehouseManager.cs" />
     <Compile Include="BusinessLogicLayer\WarehouseSendsToMarketManager.cs" />
     <Compile Include="DataAccessLayer\AdminRepository.cs" />
     <Compile Include="DataAccessLayer\AppCurrencyRepository.cs" />
@@ -346,6 +347,18 @@
     <Compile Include="PresentationLayer\AddCountryForm.Designer.cs">
       <DependentUpon>AddCountryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\AddFactoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddFactoryForm.Designer.cs">
+      <DependentUpon>AddFactoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AddMarketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddMarketForm.Designer.cs">
+      <DependentUpon>AddMarketForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\AddProfessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,17 +437,35 @@
     <Compile Include="PresentationLayer\DefineCompanyForm.Designer.cs">
       <DependentUpon>DefineCompanyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\FactoryTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FactoryTransactionForm.Designer.cs">
+      <DependentUpon>FactoryTransactionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\MarketTransactionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\MarketTransactionsForm.Designer.cs">
+      <DependentUpon>MarketTransactionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\ProfessionTransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\ProfessionTransactionForm.Designer.cs">
       <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateCompanyForm.Designer.cs">
+      <DependentUpon>UpdateCompanyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\UpdateCompanyOwnerHasCompanyForm.cs">
       <SubType>Form</SubType>
@@ -454,11 +485,35 @@
     <Compile Include="PresentationLayer\UpdateCountryForm.Designer.cs">
       <DependentUpon>UpdateCountryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\UpdateFactoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateFactoryForm.Designer.cs">
+      <DependentUpon>UpdateFactoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateMarketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateMarketForm.Designer.cs">
+      <DependentUpon>UpdateMarketForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\UpdateProfessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\UpdateProfessionForm.Designer.cs">
       <DependentUpon>UpdateProfessionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateWarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UpdateWarehouseForm.Designer.cs">
+      <DependentUpon>UpdateWarehouseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\WarehouseTransactionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\WarehouseTransactionsForm.Designer.cs">
+      <DependentUpon>WarehouseTransactionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -467,6 +522,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddCountryForm.resx">
       <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddFactoryForm.resx">
+      <DependentUpon>AddFactoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddMarketForm.resx">
+      <DependentUpon>AddMarketForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddProfessionForm.resx">
       <DependentUpon>AddProfessionForm.cs</DependentUpon>
@@ -507,11 +568,20 @@
     <EmbeddedResource Include="PresentationLayer\DefineCompanyForm.resx">
       <DependentUpon>DefineCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FactoryTransactionForm.resx">
+      <DependentUpon>FactoryTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\MarketTransactionsForm.resx">
+      <DependentUpon>MarketTransactionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\ProfessionTransactionForm.resx">
       <DependentUpon>ProfessionTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateCompanyForm.resx">
+      <DependentUpon>UpdateCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UpdateCompanyOwnerHasCompanyForm.resx">
       <DependentUpon>UpdateCompanyOwnerHasCompanyForm.cs</DependentUpon>
@@ -522,8 +592,17 @@
     <EmbeddedResource Include="PresentationLayer\UpdateCountryForm.resx">
       <DependentUpon>UpdateCountryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateFactoryForm.resx">
+      <DependentUpon>UpdateFactoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UpdateMarketForm.resx">
+      <DependentUpon>UpdateMarketForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UpdateProfessionForm.resx">
       <DependentUpon>UpdateProfessionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\WarehouseTransactionsForm.resx">
+      <DependentUpon>WarehouseTransactionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -567,6 +646,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\domain.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\building-3-fill.png" />
     <None Include="Resources\store-line.png" />

@@ -93,6 +93,16 @@ namespace MarketAppProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap companyIcon {
+            get {
+                object obj = ResourceManager.GetObject("companyIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap companyOwnerIcon {
             get {
                 object obj = ResourceManager.GetObject("companyOwnerIcon", resourceCulture);

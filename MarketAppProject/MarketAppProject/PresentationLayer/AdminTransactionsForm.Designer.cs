@@ -34,9 +34,21 @@
             this.BtnCountry = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnCompanyType = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BtnCompany = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.BtnFactory = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.BtnMarket = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.BtnWarehouse = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,6 +117,94 @@
             this.BtnCompanyType.UseVisualStyleBackColor = true;
             this.BtnCompanyType.Click += new System.EventHandler(this.BtnCompanyType_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.BtnCompany);
+            this.groupBox4.Location = new System.Drawing.Point(600, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(190, 153);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Company Transactions";
+            // 
+            // BtnCompany
+            // 
+            this.BtnCompany.BackgroundImage = global::MarketAppProject.Properties.Resources.companyIcon;
+            this.BtnCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCompany.Location = new System.Drawing.Point(3, 23);
+            this.BtnCompany.Name = "BtnCompany";
+            this.BtnCompany.Size = new System.Drawing.Size(184, 127);
+            this.BtnCompany.TabIndex = 1;
+            this.BtnCompany.UseVisualStyleBackColor = true;
+            this.BtnCompany.Click += new System.EventHandler(this.BtnCompany_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.BtnFactory);
+            this.groupBox5.Location = new System.Drawing.Point(793, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(190, 153);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Factory Transactions";
+            // 
+            // BtnFactory
+            // 
+            this.BtnFactory.BackgroundImage = global::MarketAppProject.Properties.Resources.factoryIcon;
+            this.BtnFactory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnFactory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnFactory.Location = new System.Drawing.Point(3, 23);
+            this.BtnFactory.Name = "BtnFactory";
+            this.BtnFactory.Size = new System.Drawing.Size(184, 127);
+            this.BtnFactory.TabIndex = 1;
+            this.BtnFactory.UseVisualStyleBackColor = true;
+            this.BtnFactory.Click += new System.EventHandler(this.BtnFactory_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.BtnMarket);
+            this.groupBox6.Location = new System.Drawing.Point(989, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(190, 153);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Market Transactions";
+            // 
+            // BtnMarket
+            // 
+            this.BtnMarket.BackgroundImage = global::MarketAppProject.Properties.Resources.marketIcon;
+            this.BtnMarket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnMarket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMarket.Location = new System.Drawing.Point(3, 23);
+            this.BtnMarket.Name = "BtnMarket";
+            this.BtnMarket.Size = new System.Drawing.Size(184, 127);
+            this.BtnMarket.TabIndex = 1;
+            this.BtnMarket.UseVisualStyleBackColor = true;
+            this.BtnMarket.Click += new System.EventHandler(this.BtnMarket_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.BtnWarehouse);
+            this.groupBox7.Location = new System.Drawing.Point(12, 168);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(190, 153);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Warehouse Transactions";
+            // 
+            // BtnWarehouse
+            // 
+            this.BtnWarehouse.BackgroundImage = global::MarketAppProject.Properties.Resources.warehouseIcon;
+            this.BtnWarehouse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnWarehouse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnWarehouse.Location = new System.Drawing.Point(3, 23);
+            this.BtnWarehouse.Name = "BtnWarehouse";
+            this.BtnWarehouse.Size = new System.Drawing.Size(184, 127);
+            this.BtnWarehouse.TabIndex = 1;
+            this.BtnWarehouse.UseVisualStyleBackColor = true;
+            this.BtnWarehouse.Click += new System.EventHandler(this.BtnWarehouse_Click);
+            // 
             // AdminTransactionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -112,6 +212,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(1182, 453);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -123,6 +227,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,5 +243,13 @@
         private System.Windows.Forms.Button BtnCountry;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button BtnCompanyType;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button BtnCompany;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button BtnFactory;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button BtnMarket;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button BtnWarehouse;
     }
 }

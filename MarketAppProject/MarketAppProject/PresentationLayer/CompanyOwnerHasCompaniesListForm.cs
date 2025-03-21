@@ -116,10 +116,5 @@ namespace MarketAppProject.PresentationLayer
             CompanyOwnerHasCompaniesListForm_Load(sender, e);
         }
 
-        private void BtnDefineCompany_Click(object sender, EventArgs e)
-        {
-            DefineCompanyForm defineCompanyForm=new DefineCompanyForm(companyOwner);
-            defineCompanyForm.ShowDialog();
-        }
     }
 }
