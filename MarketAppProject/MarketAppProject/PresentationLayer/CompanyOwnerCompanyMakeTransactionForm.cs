@@ -60,5 +60,11 @@ namespace MarketAppProject.PresentationLayer
                 MessageBox.Show("The process canceled","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void BtnBuyfactory_Click(object sender, EventArgs e)
+        {
+            CompanyHasFactoriesForm companyHasFactoriesForm = new CompanyHasFactoriesForm(company);
+            companyHasFactoriesForm.ShowDialog();
+        }
     }
 }

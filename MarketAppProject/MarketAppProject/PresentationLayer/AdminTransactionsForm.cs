@@ -55,7 +55,8 @@ namespace MarketAppProject.PresentationLayer
 
         private void BtnWarehouse_Click(object sender, EventArgs e)
         {
-
+            WarehouseTransactionsForm warehouseTransactionsForm = new WarehouseTransactionsForm();
+            warehouseTransactionsForm.ShowDialog();
         }
     }
 }

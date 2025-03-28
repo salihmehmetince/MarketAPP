@@ -365,6 +365,12 @@
     <Compile Include="PresentationLayer\AddProfessionForm.Designer.cs">
       <DependentUpon>AddProfessionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\AddWarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddWarehouseForm.Designer.cs">
+      <DependentUpon>AddWarehouseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,11 +383,29 @@
     <Compile Include="PresentationLayer\AdminTransactionsForm.Designer.cs">
       <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\CompanyHasFactoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyHasFactoriesForm.Designer.cs">
+      <DependentUpon>CompanyHasFactoriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyHasFactoryMakeTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyHasFactoryMakeTransactionForm.Designer.cs">
+      <DependentUpon>CompanyHasFactoryMakeTransactionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerBuyCompanyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerBuyCompanyForm.Designer.cs">
       <DependentUpon>CompanyOwnerBuyCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuyFactoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CompanyOwnerBuyFactoryForm.Designer.cs">
+      <DependentUpon>CompanyOwnerBuyFactoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\CompanyOwnerBuysCompanyForm.cs">
       <SubType>Form</SubType>
@@ -532,14 +556,23 @@
     <EmbeddedResource Include="PresentationLayer\AddProfessionForm.resx">
       <DependentUpon>AddProfessionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddWarehouseForm.resx">
+      <DependentUpon>AddWarehouseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AdminTransactionsForm.resx">
       <DependentUpon>AdminTransactionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyHasFactoriesForm.resx">
+      <DependentUpon>CompanyHasFactoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuyCompanyForm.resx">
       <DependentUpon>CompanyOwnerBuyCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuyFactoryForm.resx">
+      <DependentUpon>CompanyOwnerBuyFactoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\CompanyOwnerBuysCompanyForm.resx">
       <DependentUpon>CompanyOwnerBuysCompanyForm.cs</DependentUpon>

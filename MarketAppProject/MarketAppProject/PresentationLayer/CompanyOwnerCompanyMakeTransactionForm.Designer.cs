@@ -112,6 +112,7 @@
             this.BtnBuyfactory.Size = new System.Drawing.Size(143, 102);
             this.BtnBuyfactory.TabIndex = 1;
             this.BtnBuyfactory.UseVisualStyleBackColor = true;
+            this.BtnBuyfactory.Click += new System.EventHandler(this.BtnBuyfactory_Click);
             // 
             // groupBox4
             // 
